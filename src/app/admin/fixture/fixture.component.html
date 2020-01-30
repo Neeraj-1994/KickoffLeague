@@ -1,0 +1,176 @@
+<form [formGroup]="fixtureForm" (ngSubmit)="createMatch()">
+
+  <div class="card border border-rounded">
+
+    <div class="card-header" style="background-image: linear-gradient(to right, darkblue, blue, lightblue, white)">
+
+      <div style="font-size: 20px; text-align: center;" class="form-group">
+          <input type="readonly" formControlName="MatchName" [value]="matchName" class="form-control text-center">
+      </div>
+
+    </div>
+
+    <div class="card-body bg-info">
+
+      <div class="form-row">
+
+        <div class="form-group">
+          <label>Stadium: </label>
+            <select class="form-control" formControlName="Stadium">
+              <option *ngFor="let stadium of Stadium" [value]="stadium">{{stadium}}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+        <label>Date: </label>
+            <input type="date" class="form-control" formControlName="Date">
+        </div>
+
+      </div>
+
+      <div class="form-row">
+
+        <div class="form-group">
+        <label>Time: </label>
+            <input type="time" class="form-control" formControlName="Time">
+        </div>
+
+        <div class="form-group">
+        <label>Ticket Cost: </label>
+            <input type="number" class="form-control" formControlName="TicketCost">
+        </div>
+
+      </div>
+
+      <div class="form-row">
+
+        <div class="form-group">
+          <label>Referee: </label>
+            <select class="form-control" formControlName="Referee">
+              <option *ngFor="let referee of officials" [value]="referee">{{referee}}</option>
+            </select>
+          </div>
+
+        <div class="form-group">
+        <label>Linesmen: </label>
+            <select class="form-control" formControlName="Linesman1">
+              <option *ngFor="let linesmen of linesman" [value]="linesmen">{{linesmen}}</option>
+            </select>
+          <label>
+            <select class="form-control" formControlName="Linesman2" [class.is-invalid]="fixtureForm.errors?.misMatch">
+              <option *ngFor="let linesmen of linesman" [value]="linesmen">{{linesmen}}</option>
+              <small class="text-danger" *ngIf="fixtureForm.errors?.misMatch">Do not select same linesmen</small>
+            </select>
+          </label>
+        </div>
+
+      </div>
+
+      <div class="form-row">
+
+        <div class="form-group">
+          <label>
+            <input type="readonly" formControlName="Team1Name" [value]="team.Name" class="form-control text-center">
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label>
+            <input type="readonly" formControlName="Team2Name" [value]="team2.Name" class="form-control text-center"
+                   [class.is-invalid]="fixtureForm.errors?.misMatch1">
+          </label>
+          <small class="text-danger" *ngIf="fixtureForm.errors?.misMatch1">Do not select same team</small>
+        </div>
+
+      </div>
+
+      <div class="form-row">
+
+        <div class="form-group">
+          <label>Manager: </label>
+          <label>
+            <input type="readonly" formControlName="Team1Manager" [value]="team.Manager" class="form-control text-center">
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label>Manager: </label>
+          <label>
+            <input type="readonly" formControlName="Team2Manager" [value]="team2.Manager" class="form-control text-center">
+          </label>
+        </div>
+
+      </div>
+
+      <div class="form-row">
+
+        <div class="form-group">
+          <label>Coach: </label>
+          <label>
+            <input type="readonly" formControlName="Team1Coach" [value]="team.Coach" class="form-control text-center">
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label>Coach: </label>
+          <label>
+            <input type="readonly" formControlName="Team2Coach" [value]="team2.Coach" class="form-control text-center">
+          </label>
+        </div>
+
+      </div>
+
+      <div class="form-row">
+
+        <div class="form-group">
+          <label>Name</label>
+          <div *ngFor="let child of fixtureForm.get('Team1.Players').controls; let i=index">
+            <div [formGroupName]="i">
+              <input type="readonly" formControlName="Name" class="form-control">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>T-shirt Number</label>
+          <div *ngFor="let child of fixtureForm.get('Team1Players').controls; let i=index">
+              <div [formGroupName]="i">
+              <input type="readonly" formControlName="tNumber" class="form-control">
+              </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+        <label>Role</label>
+          <div *ngFor="let child of fixtureForm.get('Team1Players').controls; let i=index">
+            <div [formGroupName]="i">
+              <input type="readonly" formControlName="Role" class="form-control">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+        <label>Name</label>
+          <div></div>
+        </div>
+
+        <div class="form-group">
+        <label>T-shirt Number</label>
+          <div></div>
+        </div>
+
+        <div class="form-group">
+        <label>Role</label>
+          <div></div>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+          <button type="submit" class="btn btn-warning">Create Match</button>
+      </div>
+
+    </div>
+  </div>
+</form>
+

@@ -1,0 +1,531 @@
+{
+  "Users": [
+    {
+      "id": "1",
+      "firstName": "Neeraj",
+      "lastName": "Pradhan",
+      "userName": "Neeraj2012",
+      "email": "neeraj247@gmail.com",
+      "password": "Neeraj2012",
+      "confirmPassword": "Neeraj@2012#",
+      "subscribe": true,
+      "phone": "17488754",
+      "role": "admin"
+    },
+    {
+      "firstName": "Sashi",
+      "lastName": "Giri",
+      "userName": "Sashi.Giri987",
+      "email": "sashi.giri987@gmail.com",
+      "password": "Sashi987",
+      "confirmPassword": "Sashi987",
+      "subscribe": false,
+      "phone": "77101010",
+      "id": 2
+    },
+    {
+      "firstName": "Krishna",
+      "lastName": "Giri",
+      "userName": "KgiriPhpa",
+      "email": "kgiriphpa@gmail.com",
+      "password": "Krishna@1#",
+      "confirmPassword": "Krishna@1#",
+      "subscribe": false,
+      "phone": "17963908",
+      "id": 3
+    }
+  ],
+  "Matches": [
+    {
+      "id": 1,
+      "Team1": {
+        "Name": "Manchester United",
+        "Members": {
+          "Manager": "Ole Gunnar Solskjær",
+          "Coach": "Michael Carrick",
+          "GK": [
+            {
+              "Name": "David de Gea",
+              "Number": 1
+            },
+            {
+              "Name": "Lee Grant",
+              "Number": 2
+            }
+          ],
+          "DF": [
+            {
+              "Name": "Victor Lindelöf",
+              "Number": 3
+            },
+            {
+              "Name": "Eric Bailly",
+              "Number": 4
+            },
+            {
+              "Name": "Phil Jones",
+              "Number": 5
+            },
+            {
+              "Name": "Harry Maguire",
+              "Number": 6
+            },
+            {
+              "Name": "Marcos Rojo",
+              "Number": 7
+            }
+          ],
+          "MF": [
+            {
+              "Name": "Paul Pogba",
+              "Number": 8
+            },
+            {
+              "Name": "Juan Mata",
+              "Number": 9
+            },
+            {
+              "Name": "Jesse Lingard",
+              "Number": 10
+            },
+            {
+              "Name": "Andreas Pereira",
+              "Number": 11
+            }
+          ],
+          "FW": [
+            {
+              "Name": "Anthony Martial",
+              "Number": 12
+            },
+            {
+              "Name": "Marcus Rashford",
+              "Number": 13
+            },
+            {
+              "Name": "Mason Greenwood",
+              "Number": 14
+            },
+            {
+              "Name": "Tahith Chong",
+              "Number": 15
+            }
+          ]
+        }
+      },
+      "Team2": {
+        "Name": "Chealsea",
+        "Members": {
+          "Manager": "Ole Gunnar Solskjær",
+          "Coach": "Michael Carrick",
+          "GK": [
+            {
+              "Name": "David de Gea",
+              "Number": 1
+            },
+            {
+              "Name": "Lee Grant",
+              "Number": 2
+            }
+          ],
+          "DF": [
+            {
+              "Name": "Victor Lindelöf",
+              "Number": 3
+            },
+            {
+              "Name": "Eric Bailly",
+              "Number": 4
+            },
+            {
+              "Name": "Phil Jones",
+              "Number": 5
+            },
+            {
+              "Name": "Harry Maguire",
+              "Number": 6
+            },
+            {
+              "Name": "Marcos Rojo",
+              "Number": 7
+            }
+          ],
+          "MF": [
+            {
+              "Name": "Paul Pogba",
+              "Number": 8
+            },
+            {
+              "Name": "Juan Mata",
+              "Number": 9
+            },
+            {
+              "Name": "Jesse Lingard",
+              "Number": 10
+            },
+            {
+              "Name": "Andreas Pereira",
+              "Number": 11
+            }
+          ],
+          "FW": [
+            {
+              "Name": "Anthony Martial",
+              "Number": 12
+            },
+            {
+              "Name": "Marcus Rashford",
+              "Number": 13
+            },
+            {
+              "Name": "Mason Greenwood",
+              "Number": 14
+            },
+            {
+              "Name": "Tahith Chong",
+              "Number": 15
+            }
+          ]
+        },
+        "Date": "24-01-2020",
+        "Time": "12.00 PM",
+        "Stadium": "Anfield Stadium",
+        "TicketCost": "$25"
+      }
+    }
+  ],
+  "Officials": [
+    {
+      "Referee": [
+        "Martin Atkinson",
+        "Anthony Taylor",
+        "Mike Dean",
+        "Michael Oliver",
+        "Paul Tierney",
+        "Chris Kavanagh"
+      ],
+      "Linesman": [
+        ""
+      ]
+    }
+  ],
+  "Teams": [
+    {
+      "id": 1,
+      "Name": "Manchester United",
+      "Members": {
+        "Manager": "Ole Gunnar Solskjær",
+        "Coach": [
+          " Michael Carrick",
+          "Kieran McKenna",
+          " Mark Dempsey",
+          " Martyn Pert"
+        ],
+        "GK": [
+          "David de Gea",
+          "Lee Grant"
+        ],
+        "DF": [
+          "Victor Lindelöf",
+          "Eric Bailly",
+          "Phil Jones",
+          "Harry Maguire",
+          "Marcos Rojo"
+        ],
+        "MF": [
+          "Paul Pogba",
+          "Juan Mata",
+          "Jesse Lingard",
+          "Andreas Pereira"
+        ],
+        "FW": [
+          "Anthony Martial",
+          "Marcus Rashford",
+          "Mason Greenwood",
+          "Tahith Chong"
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "Name": "Chealsea",
+      "Members": {
+        "Manager": "Ole Gunnar Solskjær",
+        "Coach": [
+          {
+            "Name": "Michael Carrick",
+            "Number": 16
+          },
+          {
+            "Name": "Kieran McKenna",
+            "Number": 17
+          },
+          {
+            "Name": "Mark Dempsey",
+            "Number": 18
+          },
+          {
+            "Name": "Martyn Pert",
+            "Number": 19
+          }
+        ],
+        "GK": [
+          {
+            "Name": "David de Gea",
+            "Number": 1
+          },
+          {
+            "Name": "Lee Grant",
+            "Number": 2
+          }
+        ],
+        "DF": [
+          {
+            "Name": "Victor Lindelöf",
+            "Number": 3
+          },
+          {
+            "Name": "Eric Bailly",
+            "Number": 4
+          },
+          {
+            "Name": "Phil Jones",
+            "Number": 5
+          },
+          {
+            "Name": "Harry Maguire",
+            "Number": 6
+          },
+          {
+            "Name": "Marcos Rojo",
+            "Number": 7
+          }
+        ],
+        "MF": [
+          {
+            "Name": "Paul Pogba",
+            "Number": 8
+          },
+          {
+            "Name": "Juan Mata",
+            "Number": 9
+          },
+          {
+            "Name": "Jesse Lingard",
+            "Number": 10
+          },
+          {
+            "Name": "Andreas Pereira",
+            "Number": 11
+          }
+        ],
+        "FW": [
+          {
+            "Name": "Anthony Martial",
+            "Number": 12
+          },
+          {
+            "Name": "Marcus Rashford",
+            "Number": 13
+          },
+          {
+            "Name": "Mason Greenwood",
+            "Number": 14
+          },
+          {
+            "Name": "Tahith Chong",
+            "Number": 15
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "Name": "Manchester City",
+      "Members": {
+        "Manager": "Ole Gunnar Solskjær",
+        "Coach": [
+          " Michael Carrick",
+          "Kieran McKenna",
+          " Mark Dempsey",
+          " Martyn Pert"
+        ],
+        "GK": [
+          "David de Gea",
+          "Lee Grant"
+        ],
+        "DF": [
+          "Victor Lindelöf",
+          "Eric Bailly",
+          "Phil Jones",
+          "Harry Maguire",
+          "Marcos Rojo"
+        ],
+        "MF": [
+          "Paul Pogba",
+          "Juan Mata",
+          "Jesse Lingard",
+          "Andreas Pereira"
+        ],
+        "FW": [
+          "Anthony Martial",
+          "Marcus Rashford",
+          "Mason Greenwood",
+          "Tahith Chong"
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "Name": "Arsenal",
+      "Members": {
+        "Manager": "Ole Gunnar Solskjær",
+        "Coach": [
+          " Michael Carrick",
+          "Kieran McKenna",
+          " Mark Dempsey",
+          " Martyn Pert"
+        ],
+        "GK": [
+          "David de Gea",
+          "Lee Grant"
+        ],
+        "DF": [
+          "Victor Lindelöf",
+          "Eric Bailly",
+          "Phil Jones",
+          "Harry Maguire",
+          "Marcos Rojo"
+        ],
+        "MF": [
+          "Paul Pogba",
+          "Juan Mata",
+          "Jesse Lingard",
+          "Andreas Pereira"
+        ],
+        "FW": [
+          "Anthony Martial",
+          "Marcus Rashford",
+          "Mason Greenwood",
+          "Tahith Chong"
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "Name": "Liecester City",
+      "Members": {
+        "Manager": "Ole Gunnar Solskjær",
+        "Coach": [
+          " Michael Carrick",
+          "Kieran McKenna",
+          " Mark Dempsey",
+          " Martyn Pert"
+        ],
+        "GK": [
+          "David de Gea",
+          "Lee Grant"
+        ],
+        "DF": [
+          "Victor Lindelöf",
+          "Eric Bailly",
+          "Phil Jones",
+          "Harry Maguire",
+          "Marcos Rojo"
+        ],
+        "MF": [
+          "Paul Pogba",
+          "Juan Mata",
+          "Jesse Lingard",
+          "Andreas Pereira"
+        ],
+        "FW": [
+          "Anthony Martial",
+          "Marcus Rashford",
+          "Mason Greenwood",
+          "Tahith Chong"
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "Name": "Liverpool",
+      "Members": {
+        "Manager": "Ole Gunnar Solskjær",
+        "Coach": [
+          " Michael Carrick",
+          "Kieran McKenna",
+          " Mark Dempsey",
+          " Martyn Pert"
+        ],
+        "GK": [
+          "David de Gea",
+          "Lee Grant"
+        ],
+        "DF": [
+          "Victor Lindelöf",
+          "Eric Bailly",
+          "Phil Jones",
+          "Harry Maguire",
+          "Marcos Rojo"
+        ],
+        "MF": [
+          "Paul Pogba",
+          "Juan Mata",
+          "Jesse Lingard",
+          "Andreas Pereira"
+        ],
+        "FW": [
+          "Anthony Martial",
+          "Marcus Rashford",
+          "Mason Greenwood",
+          "Tahith Chong"
+        ]
+      }
+    }
+  ],
+  "Tickets": [
+    {
+      "id": 1,
+      "user_name": "Sashi Giri",
+      "email": "Sashi.giri987@gmail.com",
+      "CardNumber": 4565654565466546,
+      "CVV": 123
+    },
+    {
+      "user_name": "Neeraj",
+      "email": "sdssdasda",
+      "creditCard": 1234123412341234,
+      "cVV": 123,
+      "id": 2
+    },
+    {
+      "user_name": "Neeraj",
+      "email": "asdasda",
+      "creditCard": 1234123412341234,
+      "cVV": 123,
+      "id": 3
+    },
+    {
+      "user_name": "Neeraj",
+      "email": "asasdsa",
+      "creditCard": 1234123412341234,
+      "cVV": 123,
+      "id": 4
+    },
+    {
+      "user_name": "Neeraj",
+      "email": "asasds",
+      "creditCard": 2345234523452345,
+      "cVV": 123,
+      "id": 5
+    },
+    {
+      "user_name": "Ticket",
+      "email": "asasdsa",
+      "creditCard": 1234567812345678,
+      "cVV": 123,
+      "id": 6
+    }
+  ]
+}

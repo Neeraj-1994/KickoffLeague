@@ -1,0 +1,47 @@
+<div class="row justify-content-center mt-5"><!-- row -->
+  <div class="col-md-3"><!-- col -->
+
+    <div class="card" id="SignIn"><!-- card -->
+
+      <article class="card-body"><!-- Card Title -->
+        <h4 class="card-title text-center mb-4 mt-1">Sign In</h4>
+        <hr>
+
+        <form (ngSubmit)="login()" [formGroup]="loginForm">
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"> <fa-icon [icon]="userIcon"></fa-icon> </span>
+              </div>
+              <input [class.is-invalid]="username.invalid && username.touched"
+                     class="form-control" placeholder="Username" type="text" formControlName="username">
+              <div *ngIf="username.invalid && username.touched">
+                <small *ngIf="username.errors?.required" class="text-danger">Password is required</small>
+              </div>
+            </div>
+          </div> <!-- form-group -->
+
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"> <fa-icon [icon]="passIcon"></fa-icon> </span>
+              </div>
+              <input [class.is-invalid]="password.invalid && password.touched"
+                class="form-control" placeholder="**********" type="password" formControlName="password">
+              <div *ngIf="password.invalid && password.touched">
+                <small *ngIf="password.errors?.required" class="text-danger">Password is required</small>
+              </div>
+            </div>
+          </div> <!-- form-group -->
+
+          <div class="form-group">
+            <button type="submit" [disabled]='!loginForm.valid' class="btn btn-primary btn-block"><fa-icon [icon]="loginIcon"></fa-icon> Login  </button>
+          </div> <!-- form-group -->
+
+          <p class="text-center">Not a Member?<a routerLink="/User/Register"> Register </a></p>
+        </form>
+
+      </article>
+    </div> <!-- card.// -->
+  </div><!-- col -->
+</div><!-- row -->

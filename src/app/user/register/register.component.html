@@ -1,0 +1,135 @@
+<div class="row justify-content-center mt-3 mb-3"><!-- row -->
+
+  <div class="col-md-6"><!-- col -->
+
+    <div class="card"><!-- card begin -->
+
+      <header class="card-header"><!-- card header -->
+        <a routerLink="/User/Login" class="float-right btn btn-outline-primary mt-1">Log in</a>
+        <h4 class="card-title mt-1">Register</h4>
+      </header><!-- card header -->
+
+      <article class="card-body"><!-- card body -->
+
+        <form (ngSubmit)="createUser()" [formGroup]="registrationForm"><!-- form -->
+
+          <div class="form-row">
+
+            <div class="col form-group">
+              <label>First name </label>
+              <input [class.is-invalid]="firstName.invalid && firstName.touched" formControlName="firstName"
+                     type="text" class="form-control" placeholder="First Name">
+              <div *ngIf="firstName.invalid && firstName.touched">
+                <small *ngIf="firstName.errors?.minlength" class="text-danger">First Name must be at least 2 characters</small>
+                <small *ngIf="firstName.errors?.required" class="text-danger">First Name is required</small>
+              </div>
+            </div> <!-- form-group end -->
+
+            <div class="col form-group">
+            <label>Last name</label>
+            <input [class.is-invalid]="lastName.invalid && lastName.touched" formControlName="lastName"
+              type="text" class="form-control" placeholder="Last Name">
+              <div *ngIf="lastName.invalid && lastName.touched">
+                <small *ngIf="lastName.errors?.minlength" class="text-danger">Last Name must be at least 2 characters</small>
+                <small *ngIf="lastName.errors?.required" class="text-danger">Last Name is required</small>
+              </div>
+          </div> <!-- form-group end -->
+
+          </div> <!-- form-row end -->
+
+          <div class="form-group">
+            <label>Username</label>
+            <input [class.is-invalid]="userName.invalid && userName.touched" formControlName="userName"
+            type="text" class="form-control" placeholder="Username">
+            <div *ngIf="userName.invalid && userName.touched">
+              <small *ngIf="userName.errors?.minlength" class="text-danger">Username must be at least 4 characters</small>&nbsp;
+              <small *ngIf="userName.errors?.required" class="text-danger">Username is required</small>
+              <small *ngIf="userName.errors?.forbiddenName" class="text-danger">{{userName.errors?.forbiddenName.value}} Username not allowed</small>
+            </div>
+          </div><!-- form-group end -->
+
+          <div class="form-group">
+            <label>Email address</label>
+            <input type="email" [class.is-invalid]="email.invalid && email.touched" formControlName="email"
+            class="form-control" placeholder="email@example.com">
+            <div *ngIf="email.invalid && email.touched">
+              <small *ngIf="email.errors?.email" class="text-danger">Email pattern not correct</small>&nbsp
+              <small *ngIf="email.errors?.required" class="text-danger">Email is required</small>
+            </div>
+            <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div> <!-- form-group end -->
+
+          <div class="form-group">
+            <label class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" [class.is-invalid]="gender.invalid && gender.touched" formControlName="gender" value="Male">
+              <span class="form-check-label"> Male </span>
+            </label>
+            <label class="form-check form-check-inline">
+              <input class="form-check-input" type="radio"  [class.is-invalid]="gender.invalid && gender.touched" formControlName="gender" value="Female">
+              <span class="form-check-label"> Female</span>
+            </label>
+            <small [class.d-none]="gender.valid || gender.untouched" class="text-danger">Select either Male/Female</small>
+          </div> <!-- form-group end -->
+
+          <div class="form-row">
+
+            <div class="col form-group">
+              <label>Create password</label>
+              <input [class.is-invalid]="password.invalid && password.touched" formControlName="password"
+                     class="form-control" type="password" placeholder="Password">
+              <div *ngIf="password.invalid && password.touched">
+                <small *ngIf="password.errors?.minlength" class="text-danger">Password must be at least 8 characters</small>&nbsp;
+                <small *ngIf="password.errors?.required" class="text-danger">Password is required</small>
+                <small *ngIf="password.errors?.pattern" class="text-danger">Password must be alphanumeric and include only "_, @, #, !, $"</small>
+              </div>
+            </div> <!-- form group end -->
+
+            <div class="col form-group">
+              <label>Confirm password</label>
+              <input [class.is-invalid]="registrationForm.errors?.misMatch" formControlName="confirmPassword"
+                     class="form-control" type="password" placeholder="Confirm password">
+              <small class="text-danger" *ngIf="registrationForm.errors?.misMatch">Passwords do not match</small>
+            </div> <!-- form-group end -->
+
+          </div> <!-- form-row end -->
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block" [disabled]='!registrationForm.valid'
+                    data-toggle="modal" data-target="#myModal"><fa-icon [icon]="userIcon"></fa-icon> Sign Up </button>
+          </div> <!-- form-group -->
+
+          <small class="text-muted">By clicking the 'Sign Up' button, you confirm that you accept our <a href="">Terms of use and Privacy Policy.</a></small>
+
+        </form>
+
+      </article> <!-- card-body end -->
+
+      <div class="border-top card-body text-center" *ngIf="!submitted">
+        Already with an account? <a routerLink="/User/Login">Log In</a>
+      </div>
+
+    </div> <!-- card -->
+
+  </div> <!-- col -->
+
+</div> <!-- row -->
+
+<div class="modal" id="myModal" role="dialog"><!-- Modal starts -->
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header bg-success">
+        <h4 class="modal-title"> Registration Successful! </h4>
+        <button type="button" class="close" data-dismiss="modal"> <fa-icon [icon]="closeIcon"></fa-icon> </button>
+      </div>
+      <div class="modal-body">
+        <p>Thank you for Registering with Us. Please <span routerLink="/login">Login</span> to Access our Features.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div><!-- Modal ends -->

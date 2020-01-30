@@ -1,0 +1,58 @@
+<div class="container mt-3">
+
+  <div class="header text-center text-white">
+    <h2>Match Fixture</h2>
+    <p>
+      Create match fixtures for a league or a tournament by selecting teams first and then by selecting the players, date, time and stadium.
+    </p>
+  </div>
+
+  <hr style="border-bottom: medium;">
+
+  <div class="rows">
+
+    <div class="col float-left">
+
+      <div>
+        <table class="table">
+          <thead class="thead-dark">
+          <tr class="text-center">
+            <th>Team Id</th>
+            <th>Team Name</th>
+            <th colspan="2">Select</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+          </thead>
+          <tr>
+            <td *ngIf="error$ | async as error">{{error}}</td>
+          </tr>
+          <tbody class="bg-white">
+          <tr *ngFor="let team of (teams$ |async)" class="text-center">
+            <th>{{team?.id}}</th>
+            <td>{{team.Name}}</td>
+            <th>
+              <button type="button" class="btn btn-dark" (click)=addTeam(team) style="cursor: pointer;" [disabled]="selected">Select as Team 1</button>
+            </th>
+            <th>
+              <button type="button" class="btn btn-dark" (click)=addTeam2(team) style="cursor: pointer;" [disabled]="selected2">Select as Team 2</button>
+            </th>
+            <th>
+              <button type="button" class="btn btn-secondary" (click)=editTeam(team) style="cursor: pointer;">Edit Team</button>
+            </th>
+            <th>
+              <button type="button" class="btn btn-danger" (click)=deleteTeam(team) style="cursor: pointer;">Delete Team</button>
+            </th>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+    <div class="col float-left" *ngIf="selected && selected2">
+      <app-fixture [team] ="selectedTeam" [team2] = "selectedTeam2"></app-fixture>
+    </div>
+
+  </div>
+
+</div>
+</div>

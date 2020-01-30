@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="header">
+    <h1 class="text-center" style="font-family: Monaco,serif; color: aliceblue">Welcome to Kickoff League</h1>
+    <p class="text-center">Kickoff League is an official website of Premier League for users to bet on upcoming matches and buy tickets for the matches.</p>
+  </div>
+  <div class="content">
+    <table class="table table-striped table-dark table-hover rounded-5">
+      <thead>
+      <tr>
+        <th scope="col">S.No.</th>
+        <th scope="col">Match</th>
+        <th scope="col">Stadium</th>
+        <th scope="col">Date</th>
+        <th scope="col">Time</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th scope="row">id</th>
+        <td>Teams</td>
+        <td>Stadium Name</td>
+        <td>Date of Match</td>
+        <td>Time of Match</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="footer">
+    <form>
+      <div class="form-row">
+        <div class="col form-group">
+          <button class="btn btn-success float-right" type="button" routerLink="/Match"><fa-icon [icon]="ticketIcon"></fa-icon> Buy Tickets </button>
+        </div> <!-- form-group end -->
+        <div class="col form-group">
+          <button class="btn btn-success float-left" type="button" routerLink="/MatchBet"><fa-icon [icon]="betIcon"></fa-icon> Bet on Matches </button>
+        </div> <!-- form-group end -->
+      </div>
+    </form>
+  </div>
+</div>
