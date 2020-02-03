@@ -41,7 +41,7 @@ export class LoadBetsFail implements Action {
 export class LoadBet implements Action {
   readonly type = BetActionTypes.LOAD_BET;
 
-  constructor(public payload: number) {}
+  constructor(public payload: string) {}
 }
 
 export class LoadBetSuccess implements Action {

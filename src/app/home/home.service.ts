@@ -1,38 +1,38 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
-import { Observable } from "rxjs";
+import { Observable } from 'rxjs';
 
-import { Customer } from "./customer.model";
+import { Home } from './home.model';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
-export class CustomerService {
-  private customersUrl = "http://localhost:3000/customers";
+export class HomeService {
+  private homesUrl = 'http://localhost:3000/Matches';
 
   constructor(private http: HttpClient) {}
 
-  getCustomers(): Observable<Customer[]> {
-    return this.http.get<Customer[]>(this.customersUrl);
+  getHomes(): Observable<Home[]> {
+    return this.http.get<Home[]>(this.homesUrl);
   }
 
-  getCustomerById(payload: number): Observable<Customer> {
-    return this.http.get<Customer>(`${this.customersUrl}/${payload}`);
+  getHomeById(payload: number): Observable<Home> {
+    return this.http.get<Home>(`${this.homesUrl}/${payload}`);
   }
 
-  createCustomer(payload: Customer): Observable<Customer> {
-    return this.http.post<Customer>(this.customersUrl, payload);
+  createHome(payload: Home): Observable<Home> {
+    return this.http.post<Home>(this.homesUrl, payload);
   }
 
-  updateCustomer(customer: Customer): Observable<Customer> {
-    return this.http.patch<Customer>(
-      `${this.customersUrl}/${customer.id}`,
-      customer
+  updateHome(home: Home): Observable<Home> {
+    return this.http.patch<Home>(
+      `${this.homesUrl}/${home.id}`,
+      home
     );
   }
 
-  deleteCustomer(payload: number) {
-    return this.http.delete(`${this.customersUrl}/${payload}`);
+  deleteHome(payload: number) {
+    return this.http.delete(`${this.homesUrl}/${payload}`);
   }
 }

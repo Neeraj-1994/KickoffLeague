@@ -1,1 +1,80 @@
-<p>show-match works!</p>
+<div class="row justify-content-center mt-3 mb-3">
+
+    <div class="card border border-rounded">
+
+      <div class="card-header text-center" style="background-image: linear-gradient(to right, darkblue, blue, lightblue, white)">
+         <h2>{{match.MatchName}}</h2>
+      </div>
+
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>Stadium: </th>
+            <td>{{match.Stadium}}</td>
+            <th>Date: </th>
+            <td>{{match.Date}}</td>
+            <th>Time: </th>
+            <td>{{match.Time}}</td>
+          </tr>
+          <tr>
+            <th>Ticket Cost:</th>
+            <td>Nu. {{match.TicketCost}}</td>
+            <th>Referee: </th>
+            <td>{{match.Referee}}</td>
+            <th>Linesmen: </th>
+            <td>{{match.Linesman1}}, {{match.Linesman2}}</td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th colspan="3" class="text-center">{{match.Team1Name}}</th>
+            <th colspan="3" class="text-center">{{match.Team2Name}}</th>
+          </tr>
+          <tr>
+            <th>Manager: </th>
+            <td colspan="2">{{match.Team1Manager}}</td>
+            <th>Manager: </th>
+            <td colspan="2">{{match.Team2Manager}}</td>
+          </tr>
+          <tr>
+            <th>Coach: </th>
+            <td colspan="2">{{match.Team1Coach}}</td>
+            <th>Coach: </th>
+            <td colspan="2">{{match.Team2Coach}}</td>
+          </tr>
+          <tr>
+            <td colspan="3">
+              <table class="table table-striped">
+                <tr class="bg-dark">
+                  <th>Name</th>
+                    <th>T-shirt No.</th>
+                  <th>Role</th>
+                </tr>
+                <tr *ngFor="let players of match.Team1Players">
+                  <td>{{players.Name}}</td>
+                  <td>{{players.tNumber}}</td>
+                  <td>{{players.Role}}</td>
+                </tr>
+              </table>
+            </td>
+            <td colspan="3">
+            <table class="table table-striped">
+              <tr class="bg-dark">
+                <th>Name</th>
+                <th>T-shirt No.</th>
+                <th>Role</th>
+              </tr>
+              <tr *ngFor="let players of match.Team2Players">
+                <td>{{players.Name}}</td>
+                <td>{{players.tNumber}}</td>
+                <td>{{players.Role}}</td>
+              </tr>
+            </table>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div>

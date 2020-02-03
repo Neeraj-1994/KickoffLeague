@@ -2,7 +2,7 @@ import { Action } from '@ngrx/store';
 
 import { Update } from '@ngrx/entity';
 
-import { User } from '../register.model';
+import { User} from '../register/register.model';
 
 export enum UserActionTypes {
   LOAD_USER = '[User] Load User',

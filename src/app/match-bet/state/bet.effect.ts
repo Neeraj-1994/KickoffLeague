@@ -39,7 +39,7 @@ export class BetEffect {
       betActions.BetActionTypes.LOAD_BET
     ),
     mergeMap((action: betActions.LoadBet) =>
-      this.betService.getBetById(action.payload).pipe(
+      this.betService.getBetByName(action.payload).pipe(
         map(
           (bet: Bet) =>
             new betActions.LoadBetSuccess(bet)
@@ -77,7 +77,7 @@ export class BetEffect {
         map(
           (updateBet: Bet) =>
             new betActions.UpdateBetSuccess({
-              id: updateBet.Name,
+              id: updateBet.id,
               changes: updateBet
             })
         ),

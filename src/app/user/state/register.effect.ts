@@ -6,9 +6,9 @@ import { Action } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 import { map, mergeMap, catchError } from 'rxjs/operators';
 
-import { RegisterService } from '../register.service';
+import { RegisterService} from '../register/register.service';
 import * as userActions from '../state/register.actions';
-import { User } from '../register.model';
+import { User} from '../register/register.model';
 
 @Injectable()
 export class UserEffect {

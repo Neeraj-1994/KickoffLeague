@@ -1,12 +1,11 @@
 export interface Bet {
   id: number;
-  Name: string;
+  firstName: string;
+  lastName: string;
   email: string;
-  CreditCard: {
-    CardNumber: number;
-    CVV: number;
-    ExpDate: string;
-  };
+  CardNumber: number;
+  CVV: number;
+  ExpDate: string;
   Match: string;
   SelectedTeamName: string;
   FinalScore: string;

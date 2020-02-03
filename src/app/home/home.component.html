@@ -4,7 +4,7 @@
     <p class="text-center">Kickoff League is an official website of Premier League for users to bet on upcoming matches and buy tickets for the matches.</p>
   </div>
   <div class="content">
-    <table class="table table-striped table-dark table-hover rounded-5">
+    <table class="table table-striped table-dark table-hover text-center">
       <thead>
       <tr>
         <th scope="col">S.No.</th>
@@ -12,18 +12,23 @@
         <th scope="col">Stadium</th>
         <th scope="col">Date</th>
         <th scope="col">Time</th>
+        <th scope="col">Ticket Cost</th>
       </tr>
       </thead>
       <tbody>
-      <tr>
-        <th scope="row">id</th>
-        <td>Teams</td>
-        <td>Stadium Name</td>
-        <td>Date of Match</td>
-        <td>Time of Match</td>
+      <tr *ngFor="let match of (matches$ | async)">
+        <th scope="row">{{match.id}}</th>
+        <td><button class="btn btn-link" (click)=showMatch(match)>{{match.MatchName}}</button></td>
+        <td>{{match.Stadium}}</td>
+        <td>{{match.Date | date: 'shortDate'}}</td>
+        <td>{{match.Time}}</td>
+        <td>{{match.TicketCost | currency: 'BTN '}}</td>
       </tr>
       </tbody>
     </table>
+  </div>
+  <div class="col float-left" *ngIf="selected">
+    <app-show-match [match] ="selectedMatch" *ngIf="selected"></app-show-match>
   </div>
   <div class="footer">
     <form>

@@ -7,7 +7,7 @@ import { Ticket } from '../ticket.model';
 import * as fromRoot from '../../state/app-state';
 
 export interface TicketState extends EntityState<Ticket> {
-  selectedTicketId: number | null;
+  selectedTicketId: string | null;
   loading: boolean;
   loaded: boolean;
   error: string;
@@ -57,7 +57,7 @@ export function ticketReducer(
     case ticketActions.TicketActionTypes.LOAD_TICKET_SUCCESS: {
       return ticketAdapter.addOne(action.payload, {
         ...state,
-        selectedTicketId: action.payload.id
+        selectedTicketId: action.payload.firstName
       });
     }
     case ticketActions.TicketActionTypes.LOAD_TICKET_FAIL: {

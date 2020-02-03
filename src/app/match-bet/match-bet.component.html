@@ -10,13 +10,13 @@
 
       <article class="card-body"><!-- card body -->
 
-        <form [formGroup]="betForm" (ngSubmit)="createBet()"><!-- form -->
+        <form [formGroup]="betForm"><!-- form -->
 
           <div class="form-row">
 
             <div class="col form-group">
               <label>First name </label>
-              <input [class.is-invalid]="firstName.invalid && firstName.touched" formControlName="firstName"
+              <input #fName [class.is-invalid]="firstName.invalid && firstName.touched" formControlName="firstName"
                      type="text" class="form-control" placeholder="First Name">
               <div *ngIf="firstName.invalid && firstName.touched">
                 <small *ngIf="firstName.errors?.required" class="text-danger">First Name is required</small>
@@ -25,7 +25,7 @@
 
             <div class="col form-group">
               <label>Last name</label>
-              <input [class.is-invalid]="lastName.invalid && lastName.touched" formControlName="lastName"
+              <input #lName [class.is-invalid]="lastName.invalid && lastName.touched" formControlName="lastName"
                      type="text" class="form-control" placeholder="Last Name">
               <div *ngIf="lastName.invalid && lastName.touched">
                 <small *ngIf="lastName.errors?.required" class="text-danger">Last Name is required</small>
@@ -36,7 +36,7 @@
 
           <div class="form-group">
             <label>Email address</label>
-            <input type="email" [class.is-invalid]="email.invalid && email.touched" formControlName="email"
+            <input #mail type="email" [class.is-invalid]="email.invalid && email.touched" formControlName="email"
                    class="form-control" placeholder="email@example.com">
             <div *ngIf="email.invalid && email.touched">
               <small *ngIf="email.errors?.email" class="text-danger">Email pattern not correct</small>
@@ -53,7 +53,7 @@
 
             <div class="col form-group">
               <label>Card Number </label>
-              <input type="number" class="form-control" placeholder="Card Number"
+              <input #cNumber type="number" class="form-control" placeholder="Card Number"
                      [class.is-invalid]="CardNumber.invalid && CardNumber.touched" formControlName="CardNumber">
               <div *ngIf="CardNumber.invalid && CardNumber.touched">&nbsp;
                 <small *ngIf="CardNumber.errors?.required" class="text-danger">Card Number is required</small>
@@ -62,7 +62,7 @@
 
             <div class="col form-group">
               <label>CVV</label>
-              <input type="number" class="form-control" placeholder="CVV"
+              <input #CVV type="number" class="form-control" placeholder="CVV"
                      [class.is-invalid]="cVV.invalid && cVV.touched" formControlName="cVV">
               <div *ngIf="cVV.invalid && cVV.touched">
                 <small *ngIf="cVV.errors?.required" class="text-danger">CVV is required</small>
@@ -71,7 +71,7 @@
 
             <div class="col form-group">
               <label>Expiry Date</label>
-              <input class="form-control" type="month" placeholder="month,year"
+              <input #expDate class="form-control" type="month" placeholder="month,year"
                      [class.is-invalid]="ExpiryDate.invalid && ExpiryDate.touched" formControlName="ExpiryDate">
               <small [class.d-none]="ExpiryDate.valid || ExpiryDate.untouched" class="text-danger">Select a month and a year</small>
             </div> <!-- form-group end -->
@@ -84,25 +84,20 @@
 
             <div class="col form-group">
               <label>Select Match</label>
-              <select class="form-control" formControlName="Match"
+              <select #match class="form-control" formControlName="Match"
                       [class.is-invalid]="Match.invalid && Match.touched">
                 <option></option>
-                <option *ngFor="let team of teams">{{team.Team1.Name + " vs " + team.Team2.Name}}</option>
+                <option *ngFor="let team of teams">{{team.MatchName}}</option>
               </select>
               <small [class.d-none]="Match.valid || Match.untouched" class="text-danger">Select a match</small>
             </div><!-- form group end -->
 
             <div class="col form-group">
               <label>Select Team</label>
-              <select class="form-control"
+              <select #teAm class="form-control"
                       [class.is-invalid]="SelTeam.invalid && SelTeam.touched" formControlName="SelTeam">
-                <option></option>
-                <option>Manchester United</option>
-                <option>Chelsea</option>
-                <option>Manchester City</option>
-                <option>Arsenal</option>
-                <option>Liecester City</option>
-                <option>Liverpool</option>
+                <option *ngFor="let team of teams" [value]="team.Team1Name">{{team.Team1Name}}</option>
+                <option *ngFor="let team of teams" [value]="team.Team2Name">{{team.Team2Name}}</option>
               </select>
               <small [class.d-none]="SelTeam.valid || SelTeam.untouched" class="text-danger">Select a team</small>
             </div> <!-- form group end -->
@@ -113,14 +108,14 @@
 
             <div class="col form-group">
               <label>Final Score</label>
-              <input class="form-control" type="text" placeholder="Team Selected - Team Against"
+              <input #fScore class="form-control" type="text" placeholder="Team Selected - Team Against"
                      [class.is-invalid]="FinalScore.invalid && FinalScore.touched" formControlName="FinalScore">
               <small [class.d-none]="FinalScore.valid || FinalScore.untouched" class="text-danger">Score is required</small>
             </div> <!-- form-group end -->
 
             <div class="col form-group">
               <label>Bet Amount</label>
-              <input class="form-control" type="number" placeholder="(In Ngultrums)"
+              <input #bAmount class="form-control" type="number" placeholder="(In Ngultrums)"
                      [class.is-invalid]="BetAmount.invalid && BetAmount.touched" formControlName="BetAmount">
               <small [class.d-none]="BetAmount.valid || BetAmount.untouched" class="text-danger">Please place a amount to bet</small>
             </div> <!-- form-group end -->
@@ -128,7 +123,8 @@
           </div> <!-- form-row end -->
 
           <div class="form-group">
-            <button type="submit" class="btn btn-success btn-block" [disabled]="!betForm.valid"><fa-icon [icon]="betIcon"></fa-icon> Bet on the Match </button>
+            <button type="button" class="btn btn-success btn-block" [disabled]="!betForm.valid" data-toggle="modal" data-target="#myModal">
+              <fa-icon [icon]="betIcon"></fa-icon> Bet on the Match </button>
           </div> <!-- form-group -->
 
         </form>
@@ -140,3 +136,69 @@
   </div> <!-- col -->
 
 </div> <!-- row -->
+
+<div class="modal" id="myModal" role="dialog"><!-- Modal starts -->
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header bg-success">
+        <h4 class="modal-title"> Bet Verification </h4>
+        <button type="button" class="close" data-dismiss="modal"> <fa-icon [icon]="closeIcon" (click)="this.betForm.reset()"></fa-icon> </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure the following details are correct?</p>
+        <table class="table table-striped">
+          <tr>
+            <th>First Name: </th>
+            <td>{{fName.value}}</td>
+          </tr>
+          <tr>
+            <th>Last Name: </th>
+            <td>{{lName.value}}</td>
+          </tr>
+          <tr>
+            <th>Email: </th>
+            <td>{{mail.value}}</td>
+          </tr>
+          <tr>
+            <th>Credit Card Details</th>
+          </tr>
+          <tr>
+            <th>Card Number: </th>
+            <td>{{cNumber.value}}</td>
+          </tr>
+          <tr>
+            <th>CVV: </th>
+            <td>{{CVV.value}}</td>
+          </tr>
+          <tr>
+            <th>Expiry Date: </th>
+            <td>{{expDate.value}}</td>
+          </tr>
+          <tr>
+            <th>Match: </th>
+            <td>{{match.value}}</td>
+          </tr>
+          <tr>
+            <th>Team Selected: </th>
+            <td>{{teAm.value}}</td>
+          </tr>
+          <tr>
+            <th>Final Score: </th>
+            <td>{{fScore.value}}</td>
+          </tr>
+          <tr>
+            <th>Bet Amount: </th>
+            <td>{{bAmount.value}}</td>
+          </tr>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="createBet()">Submit</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="this.betForm.reset()">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div><!-- Modal ends -->

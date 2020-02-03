@@ -2,8 +2,11 @@ import {Component, Input, OnInit} from '@angular/core';
 import * as fromTeam from '../state/admin.reducer';
 import {Store} from '@ngrx/store';
 import {AdminService} from '../admin.service';
-import { FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {LinesmanValidator, TeamValidator} from '../../_validators/match.validator';
+import {Router} from '@angular/router';
+import {ToastrService} from 'ngx-toastr';
+import {faWindowClose} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-fixture',
@@ -12,44 +15,61 @@ import {LinesmanValidator, TeamValidator} from '../../_validators/match.validato
 })
 export class FixtureComponent implements OnInit {
 
+  constructor(private store: Store<fromTeam.AppState>, private matchService: AdminService, private fb: FormBuilder, private router: Router,
+              private toastr: ToastrService) {
+  }
+
   @Input() team;
   @Input() team2;
+  closeIcon = faWindowClose;
   officials = [];
   linesman = [];
   Stadium = [];
   fixtureForm: FormGroup;
   matchName;
 
-  constructor(private store: Store<fromTeam.AppState>, private matchService: AdminService, private fb: FormBuilder) { }
+  // Form Component Shortening
+  get stadium() {
+    return this.fixtureForm.get('Stadium');
+  }
+  get date() {
+    return this.fixtureForm.get('Date');
+  }
+  get time() {
+    return this.fixtureForm.get('Time');
+  }
+  get ticket() {
+    return this.fixtureForm.get('TicketCost');
+  }
+  get ref() {
+    return this.fixtureForm.get('Referee');
+  }
+  get lines1() {
+    return this.fixtureForm.get('Linesman1');
+  }
 
-  ngOnInit() {
+    ngOnInit() {
     this.matchName = this.team.Name + ' vs ' + this.team2.Name;
-
     this.fixtureForm = this.fb.group({
-      MatchName: [{value: this.matchName, disabled: true}],
+      MatchName: [this.matchName],
       Stadium: ['', Validators.required],
       Date: ['', Validators.required],
       Time: ['', Validators.required],
       TicketCost: ['', Validators.required],
-      Referee: [''],
-      Linesman1: [''],
-      Linesman2: [''],
+      Referee: ['', Validators.required],
+      Linesman1: ['', Validators.required],
+      Linesman2: ['', Validators.required],
       Team1Name: [this.team.Name],
-      Team2Name: [this.team2.Name],
       Team1Manager: [this.team.Manager],
-      Team2Manager: [this.team2.Manager],
       Team1Coach: [this.team.Coach],
+      Team1Players: this.fb.array([]),
+      Team2Name: [this.team2.Name],
+      Team2Manager: [this.team2.Manager],
       Team2Coach: [this.team2.Coach],
-      Team1: this.fb.group({
-        Players: this.fb.array([])
-      }),
-      Team2: this.fb.group({
-        Players: this.fb.array([])
-      })
+      Team2Players: this.fb.array([])
     }, {validator: [LinesmanValidator, TeamValidator]});
 
     this.patch();
-
     this.matchService.getOfficials()
       .subscribe(data => this.officials = data);
     this.matchService.getLinesman()
@@ -59,9 +79,13 @@ export class FixtureComponent implements OnInit {
   }
 
   patch() {
-    const control = this.fixtureForm.get('Team1.Players') as FormArray;
+    const control = <FormArray>this.fixtureForm.get('Team1Players');
     this.team.Players.forEach(x => {
-      control.push(this.patchValues(x.Name, x.tNumber, x.Role));
+      control.push(this.patchValues(x.Name, x.tNumber, x.Role))
+    });
+    const control2 = <FormArray>this.fixtureForm.get('Team2Players');
+    this.team2.Players.forEach(y => {
+      control2.push(this.patchValues(y.Name, y.tNumber, y.Role))
     });
   }
 
@@ -70,7 +94,7 @@ export class FixtureComponent implements OnInit {
       Name: [Name],
       tNumber: [tNumber],
       Role: [Role]
-    });
+    })
   }
 
   createMatch() {
@@ -82,6 +106,8 @@ export class FixtureComponent implements OnInit {
         error => {
           console.log('Error', error);
         });
+    this.toastr.success('Match has been created. Go to Home Page to view.', 'Match Creation Success!');
   }
+
 
 }

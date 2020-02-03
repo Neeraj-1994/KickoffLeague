@@ -7,7 +7,7 @@ import { Bet } from '../bet.model';
 import * as fromRoot from '../../state/app-state';
 
 export interface BetState extends EntityState<Bet> {
-  selectedBetId: number | null;
+  selectedBetId: string | null;
   loading: boolean;
   loaded: boolean;
   error: string;
@@ -57,7 +57,7 @@ export function betReducer(
     case betActions.BetActionTypes.LOAD_BET_SUCCESS: {
       return betAdapter.addOne(action.payload, {
         ...state,
-        selectedBetId: action.payload.id
+        selectedBetId: action.payload.firstName
       });
     }
     case betActions.BetActionTypes.LOAD_BET_FAIL: {

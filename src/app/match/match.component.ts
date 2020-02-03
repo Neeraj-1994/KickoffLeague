@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {faTicketAlt} from '@fortawesome/free-solid-svg-icons';
+import {faTicketAlt, faWindowClose} from '@fortawesome/free-solid-svg-icons';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Store} from '@ngrx/store';
 import {Router} from '@angular/router';
@@ -7,9 +7,6 @@ import {Router} from '@angular/router';
 import {Ticket} from './ticket.model';
 import * as ticketActions from './state/ticket.actions';
 import * as fromTicket from './state/ticket.reducer';
-import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-
-import { TicketmodalComponent } from './ticketmodal/ticketmodal.component';
 
 import {ToastrService} from 'ngx-toastr';
 import {TicketService} from './ticket.service';
@@ -24,6 +21,7 @@ export class MatchComponent implements OnInit {
 
   ticketIcon = faTicketAlt;
   teams = [];
+  closeIcon = faWindowClose;
 
 // Form Component Shortening
   get firstName() {
@@ -52,8 +50,7 @@ export class MatchComponent implements OnInit {
               private store: Store<fromTicket.AppState>,
               private router: Router,
               private toastr: ToastrService,
-              private matchService: TicketService,
-              private modalService: NgbModal) {}
+              private matchService: TicketService) {}
 
   ticketingForm: FormGroup;
 
@@ -87,14 +84,6 @@ export class MatchComponent implements OnInit {
     };
 
     this.store.dispatch(new ticketActions.CreateTicket(newTicket));
-    this.toastr.success('Thank you for buying the ticket!', 'Success!');
-
-    this.ticketingForm.reset();
+    this.router.navigate(['/Home']);
   }
-
-  /* openModal() {
-    const modalRef = this.modalService.open(TicketmodalComponent);
-    modalRef.componentInstance.ticket = this.teams;
-  }
-   */
 }

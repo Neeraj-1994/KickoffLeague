@@ -1,531 +1,1471 @@
 {
   "Users": [
     {
-      "id": "1",
+      "id": 1,
       "firstName": "Neeraj",
       "lastName": "Pradhan",
       "userName": "Neeraj2012",
       "email": "neeraj247@gmail.com",
       "password": "Neeraj2012",
       "confirmPassword": "Neeraj@2012#",
-      "subscribe": true,
-      "phone": "17488754",
+      "gender": "Male",
       "role": "admin"
     },
     {
+      "id": 2,
       "firstName": "Sashi",
       "lastName": "Giri",
       "userName": "Sashi.Giri987",
       "email": "sashi.giri987@gmail.com",
       "password": "Sashi987",
       "confirmPassword": "Sashi987",
-      "subscribe": false,
-      "phone": "77101010",
-      "id": 2
+      "gender": "Male"
     },
     {
+      "id": 3,
       "firstName": "Krishna",
       "lastName": "Giri",
       "userName": "KgiriPhpa",
       "email": "kgiriphpa@gmail.com",
       "password": "Krishna@1#",
       "confirmPassword": "Krishna@1#",
-      "subscribe": false,
-      "phone": "17963908",
-      "id": 3
+      "gender": "Male"
+    },
+    {
+      "id": 4,
+      "firstName": "Kuenzang",
+      "lastName": "Gyaltshen",
+      "userName": "Kuenzang2012",
+      "email": "Kuenzang@selise.ch",
+      "password": "Kuenzang2012",
+      "confirmPassword": "Kuenzang2012",
+      "gender": "Male"
+    },
+    {
+      "id": 5,
+      "firstName": "Dorji",
+      "lastName": "Wangdi",
+      "userName": "Dorji2012",
+      "email": "dorji@gmail.com",
+      "gender": "Male",
+      "password": "Dorji2012",
+      "confirmPassword": "Dorji2012"
     }
   ],
   "Matches": [
     {
-      "id": 1,
-      "Team1": {
-        "Name": "Manchester United",
-        "Members": {
-          "Manager": "Ole Gunnar Solskjær",
-          "Coach": "Michael Carrick",
-          "GK": [
-            {
-              "Name": "David de Gea",
-              "Number": 1
-            },
-            {
-              "Name": "Lee Grant",
-              "Number": 2
-            }
-          ],
-          "DF": [
-            {
-              "Name": "Victor Lindelöf",
-              "Number": 3
-            },
-            {
-              "Name": "Eric Bailly",
-              "Number": 4
-            },
-            {
-              "Name": "Phil Jones",
-              "Number": 5
-            },
-            {
-              "Name": "Harry Maguire",
-              "Number": 6
-            },
-            {
-              "Name": "Marcos Rojo",
-              "Number": 7
-            }
-          ],
-          "MF": [
-            {
-              "Name": "Paul Pogba",
-              "Number": 8
-            },
-            {
-              "Name": "Juan Mata",
-              "Number": 9
-            },
-            {
-              "Name": "Jesse Lingard",
-              "Number": 10
-            },
-            {
-              "Name": "Andreas Pereira",
-              "Number": 11
-            }
-          ],
-          "FW": [
-            {
-              "Name": "Anthony Martial",
-              "Number": 12
-            },
-            {
-              "Name": "Marcus Rashford",
-              "Number": 13
-            },
-            {
-              "Name": "Mason Greenwood",
-              "Number": 14
-            },
-            {
-              "Name": "Tahith Chong",
-              "Number": 15
-            }
-          ]
-        }
-      },
-      "Team2": {
-        "Name": "Chealsea",
-        "Members": {
-          "Manager": "Ole Gunnar Solskjær",
-          "Coach": "Michael Carrick",
-          "GK": [
-            {
-              "Name": "David de Gea",
-              "Number": 1
-            },
-            {
-              "Name": "Lee Grant",
-              "Number": 2
-            }
-          ],
-          "DF": [
-            {
-              "Name": "Victor Lindelöf",
-              "Number": 3
-            },
-            {
-              "Name": "Eric Bailly",
-              "Number": 4
-            },
-            {
-              "Name": "Phil Jones",
-              "Number": 5
-            },
-            {
-              "Name": "Harry Maguire",
-              "Number": 6
-            },
-            {
-              "Name": "Marcos Rojo",
-              "Number": 7
-            }
-          ],
-          "MF": [
-            {
-              "Name": "Paul Pogba",
-              "Number": 8
-            },
-            {
-              "Name": "Juan Mata",
-              "Number": 9
-            },
-            {
-              "Name": "Jesse Lingard",
-              "Number": 10
-            },
-            {
-              "Name": "Andreas Pereira",
-              "Number": 11
-            }
-          ],
-          "FW": [
-            {
-              "Name": "Anthony Martial",
-              "Number": 12
-            },
-            {
-              "Name": "Marcus Rashford",
-              "Number": 13
-            },
-            {
-              "Name": "Mason Greenwood",
-              "Number": 14
-            },
-            {
-              "Name": "Tahith Chong",
-              "Number": 15
-            }
-          ]
+      "MatchName": "Chelsea vs Manchester City",
+      "Stadium": "Stamford Bridge Stadium",
+      "Date": "2020-02-22",
+      "Time": "04:00",
+      "TicketCost": 4500,
+      "Referee": "Anthony Taylor",
+      "Linesman1": "Jonathan Moss",
+      "Linesman2": "Andre Marriner",
+      "Team1Name": "Chelsea",
+      "Team1Manager": "Maurizio Sarri",
+      "Team1Coach": "Frank Lampard",
+      "Team1Players": [
+        {
+          "Name": "Kepa Arrizabalaga",
+          "tNumber": 1,
+          "Role": "GK"
         },
-        "Date": "24-01-2020",
-        "Time": "12.00 PM",
-        "Stadium": "Anfield Stadium",
-        "TicketCost": "$25"
-      }
+        {
+          "Name": "Willy Caballero",
+          "tNumber": 13,
+          "Role": "GK"
+        },
+        {
+          "Name": "Antonio Rüdiger",
+          "tNumber": 2,
+          "Role": "DF"
+        },
+        {
+          "Name": "Marcos Alonso",
+          "tNumber": 3,
+          "Role": "DF"
+        },
+        {
+          "Name": "Andreas Christensen",
+          "tNumber": 4,
+          "Role": "DF"
+        },
+        {
+          "Name": "Cesar Azpilicueta",
+          "tNumber": 28,
+          "Role": "DF"
+        },
+        {
+          "Name": "Emerson",
+          "tNumber": 33,
+          "Role": "DF"
+        },
+        {
+          "Name": "Jorginho",
+          "tNumber": 5,
+          "Role": "MF"
+        },
+        {
+          "Name": "N'Golo Kante",
+          "tNumber": 7,
+          "Role": "MF"
+        },
+        {
+          "Name": "Ross Barkleyd",
+          "tNumber": 8,
+          "Role": "MF"
+        },
+        {
+          "Name": "Ruben Loftus-Cheek",
+          "tNumber": 12,
+          "Role": "MF"
+        },
+        {
+          "Name": "Pedro",
+          "tNumber": 11,
+          "Role": "FW"
+        },
+        {
+          "Name": "Oliver Giroud",
+          "tNumber": 18,
+          "Role": "FW"
+        },
+        {
+          "Name": "Callum Hudson-Odoi",
+          "tNumber": 20,
+          "Role": "FW"
+        },
+        {
+          "Name": "William",
+          "tNumber": 10,
+          "Role": "FW"
+        }
+      ],
+      "Team2Name": "Manchester City",
+      "Team2Manager": "Pep Guardiola",
+      "Team2Coach": "Pep Guardiola",
+      "Team2Players": [
+        {
+          "Name": "Claudio Bravo",
+          "tNumber": 1,
+          "Role": "GK"
+        },
+        {
+          "Name": "Ederson",
+          "tNumber": 31,
+          "Role": "GK"
+        },
+        {
+          "Name": "Kyle Walker",
+          "tNumber": 2,
+          "Role": "DF"
+        },
+        {
+          "Name": "John Stones",
+          "tNumber": 5,
+          "Role": "DF"
+        },
+        {
+          "Name": "Aymeric Laporte",
+          "tNumber": 14,
+          "Role": "DF"
+        },
+        {
+          "Name": "Benjamin Mendy",
+          "tNumber": 22,
+          "Role": "DF"
+        },
+        {
+          "Name": "Nicolas Otamendi",
+          "tNumber": 30,
+          "Role": "DF"
+        },
+        {
+          "Name": "Ilkay Gundogan",
+          "tNumber": 8,
+          "Role": "MF"
+        },
+        {
+          "Name": "Kevin De Bruyne",
+          "tNumber": 17,
+          "Role": "MF"
+        },
+        {
+          "Name": "Bernardo Silva",
+          "tNumber": 20,
+          "Role": "MF"
+        },
+        {
+          "Name": "David Silva",
+          "tNumber": 21,
+          "Role": "MF"
+        },
+        {
+          "Name": "Riyad Mahrez",
+          "tNumber": 26,
+          "Role": "FW"
+        },
+        {
+          "Name": "Raheem Sterling",
+          "tNumber": 7,
+          "Role": "FW"
+        },
+        {
+          "Name": "Sergio Aguero",
+          "tNumber": 10,
+          "Role": "FW"
+        },
+        {
+          "Name": "Leroy Sane",
+          "tNumber": 19,
+          "Role": "FW"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "MatchName": "Manchester United vs Arsenal",
+      "Stadium": "Anfield Stadium",
+      "Date": "2020-02-15",
+      "Time": "12:00",
+      "TicketCost": 3500,
+      "Referee": "Paul Tierney",
+      "Linesman1": "Andy Madley",
+      "Linesman2": "Darren England",
+      "Team1Name": "Manchester United",
+      "Team1Manager": "Ole Gunnar Solskjær",
+      "Team1Coach": "Michael Carrick",
+      "Team1Players": [
+        {
+          "Name": "David de Gea",
+          "tNumber": 1,
+          "Role": "GK"
+        },
+        {
+          "Name": "Lee Grant",
+          "tNumber": 13,
+          "Role": "GK"
+        },
+        {
+          "Name": "Victor Lindelöf",
+          "tNumber": 2,
+          "Role": "DF"
+        },
+        {
+          "Name": "Eric Bailly",
+          "tNumber": 3,
+          "Role": "DF"
+        },
+        {
+          "Name": "Phil Jones",
+          "tNumber": 4,
+          "Role": "DF"
+        },
+        {
+          "Name": "Harry Maguire",
+          "tNumber": 5,
+          "Role": "DF"
+        },
+        {
+          "Name": "Marcos Rojo",
+          "tNumber": 16,
+          "Role": "DF"
+        },
+        {
+          "Name": "Paul Pogba",
+          "tNumber": 6,
+          "Role": "MF"
+        },
+        {
+          "Name": "Juan Mata",
+          "tNumber": 8,
+          "Role": "MF"
+        },
+        {
+          "Name": "Jesse Lingard",
+          "tNumber": 14,
+          "Role": "MF"
+        },
+        {
+          "Name": "Andreas Pereira",
+          "tNumber": 15,
+          "Role": "MF"
+        },
+        {
+          "Name": "Anthony Martial",
+          "tNumber": 9,
+          "Role": "FW"
+        },
+        {
+          "Name": "Marcus Rashford",
+          "tNumber": 10,
+          "Role": "FW"
+        },
+        {
+          "Name": "Mason Greenwood",
+          "tNumber": 16,
+          "Role": "FW"
+        },
+        {
+          "Name": "D'Mani Mellor",
+          "tNumber": 49,
+          "Role": "FW"
+        }
+      ],
+      "Team2Name": "Arsenal",
+      "Team2Manager": "Mikel Arteta",
+      "Team2Coach": "Mikel Arteta",
+      "Team2Players": [
+        {
+          "Name": "Bernd Leno",
+          "tNumber": 1,
+          "Role": "GK"
+        },
+        {
+          "Name": "Emiliano Martinez",
+          "tNumber": 26,
+          "Role": "GK"
+        },
+        {
+          "Name": "Hector Bellerin",
+          "tNumber": 2,
+          "Role": "DF"
+        },
+        {
+          "Name": "Sokratis",
+          "tNumber": 5,
+          "Role": "DF"
+        },
+        {
+          "Name": "Rob Holding",
+          "tNumber": 16,
+          "Role": "DF"
+        },
+        {
+          "Name": "Shkodran Mustafi",
+          "tNumber": 20,
+          "Role": "DF"
+        },
+        {
+          "Name": "Sead Kolasinac",
+          "tNumber": 31,
+          "Role": "DF"
+        },
+        {
+          "Name": "Mesut Ozil",
+          "tNumber": 10,
+          "Role": "MF"
+        },
+        {
+          "Name": "Lucas Torreira",
+          "tNumber": 11,
+          "Role": "MF"
+        },
+        {
+          "Name": "Ainsley Maitland-Niles",
+          "tNumber": 15,
+          "Role": "MF"
+        },
+        {
+          "Name": "Matteo Guendoui",
+          "tNumber": 29,
+          "Role": "MF"
+        },
+        {
+          "Name": "Alexandre Lacazette",
+          "tNumber": 9,
+          "Role": "FW"
+        },
+        {
+          "Name": "Pierre-Emerick Aubameyang",
+          "tNumber": 14,
+          "Role": "FW"
+        },
+        {
+          "Name": "Gabriel Martinelli",
+          "tNumber": 35,
+          "Role": "FW"
+        },
+        {
+          "Name": "Reiss Nelson",
+          "tNumber": 24,
+          "Role": "FW"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "MatchName": "Chelsea vs Manchester City",
+      "Stadium": "King Power Stadium",
+      "Date": "2020-03-12",
+      "Time": "03:00",
+      "TicketCost": 4500,
+      "Referee": "Mike Dean",
+      "Linesman1": "Andre Marriner",
+      "Linesman2": "Jonathan Moss",
+      "Team1Name": "Chelsea",
+      "Team1Manager": "Maurizio Sarri",
+      "Team1Coach": "Frank Lampard",
+      "Team1Players": [
+        {
+          "Name": "Kepa Arrizabalaga",
+          "tNumber": 1,
+          "Role": "GK"
+        },
+        {
+          "Name": "Willy Caballero",
+          "tNumber": 13,
+          "Role": "GK"
+        },
+        {
+          "Name": "Antonio Rüdiger",
+          "tNumber": 2,
+          "Role": "DF"
+        },
+        {
+          "Name": "Marcos Alonso",
+          "tNumber": 3,
+          "Role": "DF"
+        },
+        {
+          "Name": "Andreas Christensen",
+          "tNumber": 4,
+          "Role": "DF"
+        },
+        {
+          "Name": "Cesar Azpilicueta",
+          "tNumber": 28,
+          "Role": "DF"
+        },
+        {
+          "Name": "Emerson",
+          "tNumber": 33,
+          "Role": "DF"
+        },
+        {
+          "Name": "Jorginho",
+          "tNumber": 5,
+          "Role": "MF"
+        },
+        {
+          "Name": "N'Golo Kante",
+          "tNumber": 7,
+          "Role": "MF"
+        },
+        {
+          "Name": "Ross Barkleyd",
+          "tNumber": 8,
+          "Role": "MF"
+        },
+        {
+          "Name": "Ruben Loftus-Cheek",
+          "tNumber": 12,
+          "Role": "MF"
+        },
+        {
+          "Name": "Pedro",
+          "tNumber": 11,
+          "Role": "FW"
+        },
+        {
+          "Name": "Oliver Giroud",
+          "tNumber": 18,
+          "Role": "FW"
+        },
+        {
+          "Name": "Callum Hudson-Odoi",
+          "tNumber": 20,
+          "Role": "FW"
+        },
+        {
+          "Name": "William",
+          "tNumber": 10,
+          "Role": "FW"
+        }
+      ],
+      "Team2Name": "Manchester City",
+      "Team2Manager": "Pep Guardiola",
+      "Team2Coach": "Pep Guardiola",
+      "Team2Players": [
+        {
+          "Name": "Claudio Bravo",
+          "tNumber": 1,
+          "Role": "GK"
+        },
+        {
+          "Name": "Ederson",
+          "tNumber": 31,
+          "Role": "GK"
+        },
+        {
+          "Name": "Kyle Walker",
+          "tNumber": 2,
+          "Role": "DF"
+        },
+        {
+          "Name": "John Stones",
+          "tNumber": 5,
+          "Role": "DF"
+        },
+        {
+          "Name": "Aymeric Laporte",
+          "tNumber": 14,
+          "Role": "DF"
+        },
+        {
+          "Name": "Benjamin Mendy",
+          "tNumber": 22,
+          "Role": "DF"
+        },
+        {
+          "Name": "Nicolas Otamendi",
+          "tNumber": 30,
+          "Role": "DF"
+        },
+        {
+          "Name": "Ilkay Gundogan",
+          "tNumber": 8,
+          "Role": "MF"
+        },
+        {
+          "Name": "Kevin De Bruyne",
+          "tNumber": 17,
+          "Role": "MF"
+        },
+        {
+          "Name": "Bernardo Silva",
+          "tNumber": 20,
+          "Role": "MF"
+        },
+        {
+          "Name": "David Silva",
+          "tNumber": 21,
+          "Role": "MF"
+        },
+        {
+          "Name": "Riyad Mahrez",
+          "tNumber": 26,
+          "Role": "FW"
+        },
+        {
+          "Name": "Raheem Sterling",
+          "tNumber": 7,
+          "Role": "FW"
+        },
+        {
+          "Name": "Sergio Aguero",
+          "tNumber": 10,
+          "Role": "FW"
+        },
+        {
+          "Name": "Leroy Sane",
+          "tNumber": 19,
+          "Role": "FW"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "MatchName": "Arsenal vs Liecester City",
+      "Stadium": "King Power Stadium",
+      "Date": "2020-02-29",
+      "Time": "07:00",
+      "TicketCost": 5500,
+      "Referee": "Michael Oliver",
+      "Linesman1": "Andre Marriner",
+      "Linesman2": "Peter Bankes",
+      "Team1Name": "Arsenal",
+      "Team1Manager": "Mikel Arteta",
+      "Team1Coach": "Mikel Arteta",
+      "Team1Players": [
+        {
+          "Name": "Bernd Leno",
+          "tNumber": 1,
+          "Role": "GK"
+        },
+        {
+          "Name": "Emiliano Martinez",
+          "tNumber": 26,
+          "Role": "GK"
+        },
+        {
+          "Name": "Hector Bellerin",
+          "tNumber": 2,
+          "Role": "DF"
+        },
+        {
+          "Name": "Sokratis",
+          "tNumber": 5,
+          "Role": "DF"
+        },
+        {
+          "Name": "Rob Holding",
+          "tNumber": 16,
+          "Role": "DF"
+        },
+        {
+          "Name": "Shkodran Mustafi",
+          "tNumber": 20,
+          "Role": "DF"
+        },
+        {
+          "Name": "Sead Kolasinac",
+          "tNumber": 31,
+          "Role": "DF"
+        },
+        {
+          "Name": "Mesut Ozil",
+          "tNumber": 10,
+          "Role": "MF"
+        },
+        {
+          "Name": "Lucas Torreira",
+          "tNumber": 11,
+          "Role": "MF"
+        },
+        {
+          "Name": "Ainsley Maitland-Niles",
+          "tNumber": 15,
+          "Role": "MF"
+        },
+        {
+          "Name": "Matteo Guendoui",
+          "tNumber": 29,
+          "Role": "MF"
+        },
+        {
+          "Name": "Alexandre Lacazette",
+          "tNumber": 9,
+          "Role": "FW"
+        },
+        {
+          "Name": "Pierre-Emerick Aubameyang",
+          "tNumber": 14,
+          "Role": "FW"
+        },
+        {
+          "Name": "Gabriel Martinelli",
+          "tNumber": 35,
+          "Role": "FW"
+        },
+        {
+          "Name": "Reiss Nelson",
+          "tNumber": 24,
+          "Role": "FW"
+        }
+      ],
+      "Team2Name": "Liecester City",
+      "Team2Manager": "Brendan Rodgers",
+      "Team2Coach": "Brendan Rodgers",
+      "Team2Players": [
+        {
+          "Name": "Kasper Schmeichel",
+          "tNumber": 1,
+          "Role": "GK"
+        },
+        {
+          "Name": "Danny Ward",
+          "tNumber": 12,
+          "Role": "GK"
+        },
+        {
+          "Name": "Ben Chilwell",
+          "tNumber": 3,
+          "Role": "DF"
+        },
+        {
+          "Name": "Caglar Soyuncu",
+          "tNumber": 4,
+          "Role": "DF"
+        },
+        {
+          "Name": "Wes Morgan",
+          "tNumber": 5,
+          "Role": "DF"
+        },
+        {
+          "Name": "Jonny Evans",
+          "tNumber": 6,
+          "Role": "DF"
+        },
+        {
+          "Name": "Ricardo Pereira",
+          "tNumber": 21,
+          "Role": "DF"
+        },
+        {
+          "Name": "Demarai Gray",
+          "tNumber": 7,
+          "Role": "MF"
+        },
+        {
+          "Name": "James Maddison",
+          "tNumber": 10,
+          "Role": "MF"
+        },
+        {
+          "Name": "Marc Albrighton",
+          "tNumber": 11,
+          "Role": "MF"
+        },
+        {
+          "Name": "Harvey Barnes",
+          "tNumber": 15,
+          "Role": "MF"
+        },
+        {
+          "Name": "Kelechi Iheanacho",
+          "tNumber": 14,
+          "Role": "FW"
+        },
+        {
+          "Name": "Jamie Vardy",
+          "tNumber": 9,
+          "Role": "FW"
+        },
+        {
+          "Name": "Ayoe Perez",
+          "tNumber": 17,
+          "Role": "FW"
+        },
+        {
+          "Name": "Matty James",
+          "tNumber": 22,
+          "Role": "MF"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "MatchName": "Manchester United vs Manchester City",
+      "Stadium": "City of Manchester Stadium",
+      "Date": "2020-03-03",
+      "Time": "20:00",
+      "TicketCost": 3000,
+      "Referee": "Martin Atkinson",
+      "Linesman1": "Graham Scott",
+      "Linesman2": "Stuart Attwell",
+      "Team1Name": "Manchester United",
+      "Team1Manager": "Ole Gunnar Solskjær",
+      "Team1Coach": "Michael Carrick",
+      "Team1Players": [
+        {
+          "Name": "David de Gea",
+          "tNumber": 1,
+          "Role": "GK"
+        },
+        {
+          "Name": "Lee Grant",
+          "tNumber": 13,
+          "Role": "GK"
+        },
+        {
+          "Name": "Victor Lindelöf",
+          "tNumber": 2,
+          "Role": "DF"
+        },
+        {
+          "Name": "Eric Bailly",
+          "tNumber": 3,
+          "Role": "DF"
+        },
+        {
+          "Name": "Phil Jones",
+          "tNumber": 4,
+          "Role": "DF"
+        },
+        {
+          "Name": "Harry Maguire",
+          "tNumber": 5,
+          "Role": "DF"
+        },
+        {
+          "Name": "Marcos Rojo",
+          "tNumber": 16,
+          "Role": "DF"
+        },
+        {
+          "Name": "Paul Pogba",
+          "tNumber": 6,
+          "Role": "MF"
+        },
+        {
+          "Name": "Juan Mata",
+          "tNumber": 8,
+          "Role": "MF"
+        },
+        {
+          "Name": "Jesse Lingard",
+          "tNumber": 14,
+          "Role": "MF"
+        },
+        {
+          "Name": "Andreas Pereira",
+          "tNumber": 15,
+          "Role": "MF"
+        },
+        {
+          "Name": "Anthony Martial",
+          "tNumber": 9,
+          "Role": "FW"
+        },
+        {
+          "Name": "Marcus Rashford",
+          "tNumber": 10,
+          "Role": "FW"
+        },
+        {
+          "Name": "Mason Greenwood",
+          "tNumber": 16,
+          "Role": "FW"
+        },
+        {
+          "Name": "D'Mani Mellor",
+          "tNumber": 49,
+          "Role": "FW"
+        }
+      ],
+      "Team2Name": "Manchester City",
+      "Team2Manager": "Pep Guardiola",
+      "Team2Coach": "Pep Guardiola",
+      "Team2Players": [
+        {
+          "Name": "Claudio Bravo",
+          "tNumber": 1,
+          "Role": "GK"
+        },
+        {
+          "Name": "Ederson",
+          "tNumber": 31,
+          "Role": "GK"
+        },
+        {
+          "Name": "Kyle Walker",
+          "tNumber": 2,
+          "Role": "DF"
+        },
+        {
+          "Name": "John Stones",
+          "tNumber": 5,
+          "Role": "DF"
+        },
+        {
+          "Name": "Aymeric Laporte",
+          "tNumber": 14,
+          "Role": "DF"
+        },
+        {
+          "Name": "Benjamin Mendy",
+          "tNumber": 22,
+          "Role": "DF"
+        },
+        {
+          "Name": "Nicolas Otamendi",
+          "tNumber": 30,
+          "Role": "DF"
+        },
+        {
+          "Name": "Ilkay Gundogan",
+          "tNumber": 8,
+          "Role": "MF"
+        },
+        {
+          "Name": "Kevin De Bruyne",
+          "tNumber": 17,
+          "Role": "MF"
+        },
+        {
+          "Name": "Bernardo Silva",
+          "tNumber": 20,
+          "Role": "MF"
+        },
+        {
+          "Name": "David Silva",
+          "tNumber": 21,
+          "Role": "MF"
+        },
+        {
+          "Name": "Riyad Mahrez",
+          "tNumber": 26,
+          "Role": "FW"
+        },
+        {
+          "Name": "Raheem Sterling",
+          "tNumber": 7,
+          "Role": "FW"
+        },
+        {
+          "Name": "Sergio Aguero",
+          "tNumber": 10,
+          "Role": "FW"
+        },
+        {
+          "Name": "Leroy Sane",
+          "tNumber": 19,
+          "Role": "FW"
+        }
+      ],
+      "id": 5
     }
   ],
-  "Officials": [
-    {
-      "Referee": [
-        "Martin Atkinson",
-        "Anthony Taylor",
-        "Mike Dean",
-        "Michael Oliver",
-        "Paul Tierney",
-        "Chris Kavanagh"
-      ],
-      "Linesman": [
-        ""
-      ]
-    }
+  "Referee": [
+    "Martin Atkinson",
+    "Anthony Taylor",
+    "Mike Dean",
+    "Michael Oliver",
+    "Paul Tierney",
+    "Chris Kavanagh"
+  ],
+  "Linesman": [
+    "Kevin Friend",
+    "Jonathan Moss",
+    "Andre Marriner",
+    "Graham Scott",
+    "Stuart Attwell",
+    "Craig Pawson",
+    "Lee Mason",
+    "David Coote",
+    "Simon Hooper",
+    "Andy Madley",
+    "Peter Bankes",
+    "Darren England"
+  ],
+  "Stadium": [
+    "Anfield Stadium",
+    "City of Manchester Stadium",
+    "Emirates Stadium",
+    "King Power Stadium",
+    "Old Trafford Stadium",
+    "Stamford Bridge Stadium"
   ],
   "Teams": [
     {
       "id": 1,
       "Name": "Manchester United",
-      "Members": {
-        "Manager": "Ole Gunnar Solskjær",
-        "Coach": [
-          " Michael Carrick",
-          "Kieran McKenna",
-          " Mark Dempsey",
-          " Martyn Pert"
-        ],
-        "GK": [
-          "David de Gea",
-          "Lee Grant"
-        ],
-        "DF": [
-          "Victor Lindelöf",
-          "Eric Bailly",
-          "Phil Jones",
-          "Harry Maguire",
-          "Marcos Rojo"
-        ],
-        "MF": [
-          "Paul Pogba",
-          "Juan Mata",
-          "Jesse Lingard",
-          "Andreas Pereira"
-        ],
-        "FW": [
-          "Anthony Martial",
-          "Marcus Rashford",
-          "Mason Greenwood",
-          "Tahith Chong"
-        ]
-      }
+      "Manager": "Ole Gunnar Solskjær",
+      "Coach": "Michael Carrick",
+      "Players": [
+        {
+          "Name": "David de Gea",
+          "tNumber": 1,
+          "Role": "GK"
+        },
+        {
+          "Name": "Lee Grant",
+          "tNumber": 13,
+          "Role": "GK"
+        },
+        {
+          "Name": "Victor Lindelöf",
+          "tNumber": 2,
+          "Role": "DF"
+        },
+        {
+          "Name": "Eric Bailly",
+          "tNumber": 3,
+          "Role": "DF"
+        },
+        {
+          "Name": "Phil Jones",
+          "tNumber": 4,
+          "Role": "DF"
+        },
+        {
+          "Name": "Harry Maguire",
+          "tNumber": 5,
+          "Role": "DF"
+        },
+        {
+          "Name": "Marcos Rojo",
+          "tNumber": 16,
+          "Role": "DF"
+        },
+        {
+          "Name": "Paul Pogba",
+          "tNumber": 6,
+          "Role": "MF"
+        },
+        {
+          "Name": "Juan Mata",
+          "tNumber": 8,
+          "Role": "MF"
+        },
+        {
+          "Name": "Jesse Lingard",
+          "tNumber": 14,
+          "Role": "MF"
+        },
+        {
+          "Name": "Andreas Pereira",
+          "tNumber": 15,
+          "Role": "MF"
+        },
+        {
+          "Name": "Anthony Martial",
+          "tNumber": 9,
+          "Role": "FW"
+        },
+        {
+          "Name": "Marcus Rashford",
+          "tNumber": 10,
+          "Role": "FW"
+        },
+        {
+          "Name": "Mason Greenwood",
+          "tNumber": 16,
+          "Role": "FW"
+        },
+        {
+          "Name": "D'Mani Mellor",
+          "tNumber": 49,
+          "Role": "FW"
+        }
+      ]
     },
     {
       "id": 2,
-      "Name": "Chealsea",
-      "Members": {
-        "Manager": "Ole Gunnar Solskjær",
-        "Coach": [
-          {
-            "Name": "Michael Carrick",
-            "Number": 16
-          },
-          {
-            "Name": "Kieran McKenna",
-            "Number": 17
-          },
-          {
-            "Name": "Mark Dempsey",
-            "Number": 18
-          },
-          {
-            "Name": "Martyn Pert",
-            "Number": 19
-          }
-        ],
-        "GK": [
-          {
-            "Name": "David de Gea",
-            "Number": 1
-          },
-          {
-            "Name": "Lee Grant",
-            "Number": 2
-          }
-        ],
-        "DF": [
-          {
-            "Name": "Victor Lindelöf",
-            "Number": 3
-          },
-          {
-            "Name": "Eric Bailly",
-            "Number": 4
-          },
-          {
-            "Name": "Phil Jones",
-            "Number": 5
-          },
-          {
-            "Name": "Harry Maguire",
-            "Number": 6
-          },
-          {
-            "Name": "Marcos Rojo",
-            "Number": 7
-          }
-        ],
-        "MF": [
-          {
-            "Name": "Paul Pogba",
-            "Number": 8
-          },
-          {
-            "Name": "Juan Mata",
-            "Number": 9
-          },
-          {
-            "Name": "Jesse Lingard",
-            "Number": 10
-          },
-          {
-            "Name": "Andreas Pereira",
-            "Number": 11
-          }
-        ],
-        "FW": [
-          {
-            "Name": "Anthony Martial",
-            "Number": 12
-          },
-          {
-            "Name": "Marcus Rashford",
-            "Number": 13
-          },
-          {
-            "Name": "Mason Greenwood",
-            "Number": 14
-          },
-          {
-            "Name": "Tahith Chong",
-            "Number": 15
-          }
-        ]
-      }
+      "Name": "Chelsea",
+      "Manager": "Maurizio Sarri",
+      "Coach": "Frank Lampard",
+      "Players": [
+        {
+          "Name": "Kepa Arrizabalaga",
+          "tNumber": 1,
+          "Role": "GK"
+        },
+        {
+          "Name": "Willy Caballero",
+          "tNumber": 13,
+          "Role": "GK"
+        },
+        {
+          "Name": "Antonio Rüdiger",
+          "tNumber": 2,
+          "Role": "DF"
+        },
+        {
+          "Name": "Marcos Alonso",
+          "tNumber": 3,
+          "Role": "DF"
+        },
+        {
+          "Name": "Andreas Christensen",
+          "tNumber": 4,
+          "Role": "DF"
+        },
+        {
+          "Name": "Cesar Azpilicueta",
+          "tNumber": 28,
+          "Role": "DF"
+        },
+        {
+          "Name": "Emerson",
+          "tNumber": 33,
+          "Role": "DF"
+        },
+        {
+          "Name": "Jorginho",
+          "tNumber": 5,
+          "Role": "MF"
+        },
+        {
+          "Name": "N'Golo Kante",
+          "tNumber": 7,
+          "Role": "MF"
+        },
+        {
+          "Name": "Ross Barkleyd",
+          "tNumber": 8,
+          "Role": "MF"
+        },
+        {
+          "Name": "Ruben Loftus-Cheek",
+          "tNumber": 12,
+          "Role": "MF"
+        },
+        {
+          "Name": "Pedro",
+          "tNumber": 11,
+          "Role": "FW"
+        },
+        {
+          "Name": "Oliver Giroud",
+          "tNumber": 18,
+          "Role": "FW"
+        },
+        {
+          "Name": "Callum Hudson-Odoi",
+          "tNumber": 20,
+          "Role": "FW"
+        },
+        {
+          "Name": "William",
+          "tNumber": 10,
+          "Role": "FW"
+        }
+      ]
     },
     {
       "id": 3,
       "Name": "Manchester City",
-      "Members": {
-        "Manager": "Ole Gunnar Solskjær",
-        "Coach": [
-          " Michael Carrick",
-          "Kieran McKenna",
-          " Mark Dempsey",
-          " Martyn Pert"
-        ],
-        "GK": [
-          "David de Gea",
-          "Lee Grant"
-        ],
-        "DF": [
-          "Victor Lindelöf",
-          "Eric Bailly",
-          "Phil Jones",
-          "Harry Maguire",
-          "Marcos Rojo"
-        ],
-        "MF": [
-          "Paul Pogba",
-          "Juan Mata",
-          "Jesse Lingard",
-          "Andreas Pereira"
-        ],
-        "FW": [
-          "Anthony Martial",
-          "Marcus Rashford",
-          "Mason Greenwood",
-          "Tahith Chong"
-        ]
-      }
+      "Manager": "Pep Guardiola",
+      "Coach": "Pep Guardiola",
+      "Players": [
+        {
+          "Name": "Claudio Bravo",
+          "tNumber": 1,
+          "Role": "GK"
+        },
+        {
+          "Name": "Ederson",
+          "tNumber": 31,
+          "Role": "GK"
+        },
+        {
+          "Name": "Kyle Walker",
+          "tNumber": 2,
+          "Role": "DF"
+        },
+        {
+          "Name": "John Stones",
+          "tNumber": 5,
+          "Role": "DF"
+        },
+        {
+          "Name": "Aymeric Laporte",
+          "tNumber": 14,
+          "Role": "DF"
+        },
+        {
+          "Name": "Benjamin Mendy",
+          "tNumber": 22,
+          "Role": "DF"
+        },
+        {
+          "Name": "Nicolas Otamendi",
+          "tNumber": 30,
+          "Role": "DF"
+        },
+        {
+          "Name": "Ilkay Gundogan",
+          "tNumber": 8,
+          "Role": "MF"
+        },
+        {
+          "Name": "Kevin De Bruyne",
+          "tNumber": 17,
+          "Role": "MF"
+        },
+        {
+          "Name": "Bernardo Silva",
+          "tNumber": 20,
+          "Role": "MF"
+        },
+        {
+          "Name": "David Silva",
+          "tNumber": 21,
+          "Role": "MF"
+        },
+        {
+          "Name": "Riyad Mahrez",
+          "tNumber": 26,
+          "Role": "FW"
+        },
+        {
+          "Name": "Raheem Sterling",
+          "tNumber": 7,
+          "Role": "FW"
+        },
+        {
+          "Name": "Sergio Aguero",
+          "tNumber": 10,
+          "Role": "FW"
+        },
+        {
+          "Name": "Leroy Sane",
+          "tNumber": 19,
+          "Role": "FW"
+        }
+      ]
     },
     {
       "id": 4,
       "Name": "Arsenal",
-      "Members": {
-        "Manager": "Ole Gunnar Solskjær",
-        "Coach": [
-          " Michael Carrick",
-          "Kieran McKenna",
-          " Mark Dempsey",
-          " Martyn Pert"
-        ],
-        "GK": [
-          "David de Gea",
-          "Lee Grant"
-        ],
-        "DF": [
-          "Victor Lindelöf",
-          "Eric Bailly",
-          "Phil Jones",
-          "Harry Maguire",
-          "Marcos Rojo"
-        ],
-        "MF": [
-          "Paul Pogba",
-          "Juan Mata",
-          "Jesse Lingard",
-          "Andreas Pereira"
-        ],
-        "FW": [
-          "Anthony Martial",
-          "Marcus Rashford",
-          "Mason Greenwood",
-          "Tahith Chong"
-        ]
-      }
+      "Manager": "Mikel Arteta",
+      "Coach": "Mikel Arteta",
+      "Players": [
+        {
+          "Name": "Bernd Leno",
+          "tNumber": 1,
+          "Role": "GK"
+        },
+        {
+          "Name": "Emiliano Martinez",
+          "tNumber": 26,
+          "Role": "GK"
+        },
+        {
+          "Name": "Hector Bellerin",
+          "tNumber": 2,
+          "Role": "DF"
+        },
+        {
+          "Name": "Sokratis",
+          "tNumber": 5,
+          "Role": "DF"
+        },
+        {
+          "Name": "Rob Holding",
+          "tNumber": 16,
+          "Role": "DF"
+        },
+        {
+          "Name": "Shkodran Mustafi",
+          "tNumber": 20,
+          "Role": "DF"
+        },
+        {
+          "Name": "Sead Kolasinac",
+          "tNumber": 31,
+          "Role": "DF"
+        },
+        {
+          "Name": "Mesut Ozil",
+          "tNumber": 10,
+          "Role": "MF"
+        },
+        {
+          "Name": "Lucas Torreira",
+          "tNumber": 11,
+          "Role": "MF"
+        },
+        {
+          "Name": "Ainsley Maitland-Niles",
+          "tNumber": 15,
+          "Role": "MF"
+        },
+        {
+          "Name": "Matteo Guendoui",
+          "tNumber": 29,
+          "Role": "MF"
+        },
+        {
+          "Name": "Alexandre Lacazette",
+          "tNumber": 9,
+          "Role": "FW"
+        },
+        {
+          "Name": "Pierre-Emerick Aubameyang",
+          "tNumber": 14,
+          "Role": "FW"
+        },
+        {
+          "Name": "Gabriel Martinelli",
+          "tNumber": 35,
+          "Role": "FW"
+        },
+        {
+          "Name": "Reiss Nelson",
+          "tNumber": 24,
+          "Role": "FW"
+        }
+      ]
     },
     {
       "id": 5,
       "Name": "Liecester City",
-      "Members": {
-        "Manager": "Ole Gunnar Solskjær",
-        "Coach": [
-          " Michael Carrick",
-          "Kieran McKenna",
-          " Mark Dempsey",
-          " Martyn Pert"
-        ],
-        "GK": [
-          "David de Gea",
-          "Lee Grant"
-        ],
-        "DF": [
-          "Victor Lindelöf",
-          "Eric Bailly",
-          "Phil Jones",
-          "Harry Maguire",
-          "Marcos Rojo"
-        ],
-        "MF": [
-          "Paul Pogba",
-          "Juan Mata",
-          "Jesse Lingard",
-          "Andreas Pereira"
-        ],
-        "FW": [
-          "Anthony Martial",
-          "Marcus Rashford",
-          "Mason Greenwood",
-          "Tahith Chong"
-        ]
-      }
+      "Manager": "Brendan Rodgers",
+      "Coach": "Brendan Rodgers",
+      "Players": [
+        {
+          "Name": "Kasper Schmeichel",
+          "tNumber": 1,
+          "Role": "GK"
+        },
+        {
+          "Name": "Danny Ward",
+          "tNumber": 12,
+          "Role": "GK"
+        },
+        {
+          "Name": "Ben Chilwell",
+          "tNumber": 3,
+          "Role": "DF"
+        },
+        {
+          "Name": "Caglar Soyuncu",
+          "tNumber": 4,
+          "Role": "DF"
+        },
+        {
+          "Name": "Wes Morgan",
+          "tNumber": 5,
+          "Role": "DF"
+        },
+        {
+          "Name": "Jonny Evans",
+          "tNumber": 6,
+          "Role": "DF"
+        },
+        {
+          "Name": "Ricardo Pereira",
+          "tNumber": 21,
+          "Role": "DF"
+        },
+        {
+          "Name": "Demarai Gray",
+          "tNumber": 7,
+          "Role": "MF"
+        },
+        {
+          "Name": "James Maddison",
+          "tNumber": 10,
+          "Role": "MF"
+        },
+        {
+          "Name": "Marc Albrighton",
+          "tNumber": 11,
+          "Role": "MF"
+        },
+        {
+          "Name": "Harvey Barnes",
+          "tNumber": 15,
+          "Role": "MF"
+        },
+        {
+          "Name": "Kelechi Iheanacho",
+          "tNumber": 14,
+          "Role": "FW"
+        },
+        {
+          "Name": "Jamie Vardy",
+          "tNumber": 9,
+          "Role": "FW"
+        },
+        {
+          "Name": "Ayoe Perez",
+          "tNumber": 17,
+          "Role": "FW"
+        },
+        {
+          "Name": "Matty James",
+          "tNumber": 22,
+          "Role": "MF"
+        }
+      ]
     },
     {
       "id": 6,
       "Name": "Liverpool",
-      "Members": {
-        "Manager": "Ole Gunnar Solskjær",
-        "Coach": [
-          " Michael Carrick",
-          "Kieran McKenna",
-          " Mark Dempsey",
-          " Martyn Pert"
-        ],
-        "GK": [
-          "David de Gea",
-          "Lee Grant"
-        ],
-        "DF": [
-          "Victor Lindelöf",
-          "Eric Bailly",
-          "Phil Jones",
-          "Harry Maguire",
-          "Marcos Rojo"
-        ],
-        "MF": [
-          "Paul Pogba",
-          "Juan Mata",
-          "Jesse Lingard",
-          "Andreas Pereira"
-        ],
-        "FW": [
-          "Anthony Martial",
-          "Marcus Rashford",
-          "Mason Greenwood",
-          "Tahith Chong"
-        ]
-      }
+      "Manager": "Jürgen Klopp",
+      "Coach": "Jürgen Klopp",
+      "Players": [
+        {
+          "Name": "Allison",
+          "tNumber": 1,
+          "Role": "GK"
+        },
+        {
+          "Name": "Caoimhin Kelleher",
+          "tNumber": 62,
+          "Role": "GK"
+        },
+        {
+          "Name": "Virgil van Dijk",
+          "tNumber": 4,
+          "Role": "DF"
+        },
+        {
+          "Name": "Dejan Lovren",
+          "tNumber": 6,
+          "Role": "DF"
+        },
+        {
+          "Name": "Joseph Gome",
+          "tNumber": 12,
+          "Role": "DF"
+        },
+        {
+          "Name": "Andrew Robertson",
+          "tNumber": 26,
+          "Role": "DF"
+        },
+        {
+          "Name": "Joel Matip",
+          "tNumber": 32,
+          "Role": "DF"
+        },
+        {
+          "Name": "Fabinho",
+          "tNumber": 3,
+          "Role": "MF"
+        },
+        {
+          "Name": "Georginio Wijnaldum",
+          "tNumber": 5,
+          "Role": "MF"
+        },
+        {
+          "Name": "James Milner",
+          "tNumber": 7,
+          "Role": "MF"
+        },
+        {
+          "Name": "Naby Keita",
+          "tNumber": 8,
+          "Role": "MF"
+        },
+        {
+          "Name": "Roberto Firmino",
+          "tNumber": 9,
+          "Role": "FW"
+        },
+        {
+          "Name": "Sadio Mane",
+          "tNumber": 10,
+          "Role": "FW"
+        },
+        {
+          "Name": "Mohamed Salah",
+          "tNumber": 11,
+          "Role": "FW"
+        },
+        {
+          "Name": "Xherdan Shaqiri",
+          "tNumber": 23,
+          "Role": "FW"
+        }
+      ]
     }
   ],
-  "Tickets": [
+  "Tickets": [],
+  "Bets": [
     {
       "id": 1,
-      "user_name": "Sashi Giri",
-      "email": "Sashi.giri987@gmail.com",
-      "CardNumber": 4565654565466546,
-      "CVV": 123
+      "firstName": "Neeraj",
+      "lastName": "Pradhan",
+      "email": "neeraj@gmail.com",
+      "CardNumber": 1234,
+      "CVV": 123,
+      "ExpDate": "2022-12",
+      "Match": "Chelsea vs Manchester City",
+      "SelectedTeamName": "Chelsea",
+      "FinalScore": "4-1",
+      "BetAmount": 4000
     },
     {
-      "user_name": "Neeraj",
-      "email": "sdssdasda",
-      "creditCard": 1234123412341234,
-      "cVV": 123,
-      "id": 2
-    },
-    {
-      "user_name": "Neeraj",
-      "email": "asdasda",
-      "creditCard": 1234123412341234,
-      "cVV": 123,
-      "id": 3
-    },
-    {
-      "user_name": "Neeraj",
-      "email": "asasdsa",
-      "creditCard": 1234123412341234,
-      "cVV": 123,
-      "id": 4
-    },
-    {
-      "user_name": "Neeraj",
-      "email": "asasds",
-      "creditCard": 2345234523452345,
-      "cVV": 123,
-      "id": 5
-    },
-    {
-      "user_name": "Ticket",
-      "email": "asasdsa",
-      "creditCard": 1234567812345678,
-      "cVV": 123,
-      "id": 6
+      "id": 2,
+      "firstName": "Neeraj",
+      "lastName": "Pradhan",
+      "email": "neeraj@gmail.com",
+      "CardNumber": 1234123412341234,
+      "CVV": 123,
+      "ExpDate": "2022-12",
+      "Match": "Chelsea vs Manchester City",
+      "SelectedTeamName": "Manchester City",
+      "FinalScore": "4-1",
+      "BetAmount": 2000
     }
   ]
 }

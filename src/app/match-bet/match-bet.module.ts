@@ -2,13 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {ToastrModule} from 'ngx-toastr';
+import {ToastrModule, ToastrService} from 'ngx-toastr';
 import {StoreModule} from '@ngrx/store';
 import {EffectsModule} from '@ngrx/effects';
 import { MatchBetRoutingModule } from './match-bet-routing.module';
 
 import { MatchBetComponent } from './match-bet.component';
-import { BetmodalComponent } from './betmodal/betmodal.component';
 
 import {betReducer} from './state/bet.reducer';
 import {BetEffect} from './state/bet.effect';
@@ -17,7 +16,7 @@ import {BetService} from './bet.service';
 
 
 @NgModule({
-  declarations: [MatchBetComponent, BetmodalComponent],
+  declarations: [MatchBetComponent],
   imports: [
     CommonModule,
     MatchBetRoutingModule,
@@ -28,7 +27,6 @@ import {BetService} from './bet.service';
     StoreModule.forFeature('bets', betReducer),
     EffectsModule.forFeature([BetEffect])
   ],
-  providers: [BetService],
-  entryComponents: [BetmodalComponent]
+  providers: [BetService, ToastrService]
 })
 export class MatchBetModule { }

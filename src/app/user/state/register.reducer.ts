@@ -3,7 +3,7 @@ import { createFeatureSelector, createSelector } from '@ngrx/store';
 
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 
-import { User } from '../register.model';
+import { User} from '../register/register.model';
 import * as fromRoot from '../../state/app-state';
 
 export interface UserState extends EntityState<User> {

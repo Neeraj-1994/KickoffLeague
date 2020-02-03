@@ -1,128 +1,128 @@
-import { Action } from "@ngrx/store";
+import { Action } from '@ngrx/store';
 
-import { Update } from "@ngrx/entity";
+import { Update } from '@ngrx/entity';
 
-import { Customer } from "../customer.model";
+import { Home } from '../home.model';
 
-export enum CustomerActionTypes {
-  LOAD_CUSTOMERS = "[Customer] Load Customers",
-  LOAD_CUSTOMERS_SUCCESS = "[Customer] Load Customers Success",
-  LOAD_CUSTOMERS_FAIL = "[Customer] Load Customers Fail",
-  LOAD_CUSTOMER = "[Customer] Load Customer",
-  LOAD_CUSTOMER_SUCCESS = "[Customer] Load Customer Success",
-  LOAD_CUSTOMER_FAIL = "[Customer] Load Customer Fail",
-  CREATE_CUSTOMER = "[Customer] Create Customer",
-  CREATE_CUSTOMER_SUCCESS = "[Customer] Create Customer Success",
-  CREATE_CUSTOMER_FAIL = "[Customer] Create Customer Fail",
-  UPDATE_CUSTOMER = "[Customer] Update Customer",
-  UPDATE_CUSTOMER_SUCCESS = "[Customer] Update Customer Success",
-  UPDATE_CUSTOMER_FAIL = "[Customer] Update Customer Fail",
-  DELETE_CUSTOMER = "[Customer] Delete Customer",
-  DELETE_CUSTOMER_SUCCESS = "[Customer] Delete Customer Success",
-  DELETE_CUSTOMER_FAIL = "[Customer] Delete Customer Fail"
+export enum HomeActionTypes {
+  LOAD_HOMES = '[Home] Load Homes',
+  LOAD_HOMES_SUCCESS = '[Home] Load Homes Success',
+  LOAD_HOMES_FAIL = '[Home] Load Homes Fail',
+  LOAD_HOME = '[Home] Load Home',
+  LOAD_HOME_SUCCESS = '[Home] Load Home Success',
+  LOAD_HOME_FAIL = '[Home] Load Home Fail',
+  CREATE_HOME = '[Home] Create Home',
+  CREATE_HOME_SUCCESS = '[Home] Create Home Success',
+  CREATE_HOME_FAIL = '[Home] Create Home Fail',
+  UPDATE_HOME = '[Home] Update Home',
+  UPDATE_HOME_SUCCESS = '[Home] Update Home Success',
+  UPDATE_HOME_FAIL = '[Home] Update Home Fail',
+  DELETE_HOME = '[Home] Delete Home',
+  DELETE_HOME_SUCCESS = '[Home] Delete Home Success',
+  DELETE_HOME_FAIL = '[Home] Delete Home Fail'
 }
 
-export class LoadCustomers implements Action {
-  readonly type = CustomerActionTypes.LOAD_CUSTOMERS;
+export class LoadHomes implements Action {
+  readonly type = HomeActionTypes.LOAD_HOMES;
 }
 
-export class LoadCustomersSuccess implements Action {
-  readonly type = CustomerActionTypes.LOAD_CUSTOMERS_SUCCESS;
+export class LoadHomesSuccess implements Action {
+  readonly type = HomeActionTypes.LOAD_HOMES_SUCCESS;
 
-  constructor(public payload: Customer[]) {}
+  constructor(public payload: Home[]) {}
 }
 
-export class LoadCustomersFail implements Action {
-  readonly type = CustomerActionTypes.LOAD_CUSTOMERS_FAIL;
+export class LoadHomesFail implements Action {
+  readonly type = HomeActionTypes.LOAD_HOMES_FAIL;
 
   constructor(public payload: string) {}
 }
 
-export class LoadCustomer implements Action {
-  readonly type = CustomerActionTypes.LOAD_CUSTOMER;
+export class LoadHome implements Action {
+  readonly type = HomeActionTypes.LOAD_HOME;
 
   constructor(public payload: number) {}
 }
 
-export class LoadCustomerSuccess implements Action {
-  readonly type = CustomerActionTypes.LOAD_CUSTOMER_SUCCESS;
+export class LoadHomeSuccess implements Action {
+  readonly type = HomeActionTypes.LOAD_HOME_SUCCESS;
 
-  constructor(public payload: Customer) {}
+  constructor(public payload: Home) {}
 }
 
-export class LoadCustomerFail implements Action {
-  readonly type = CustomerActionTypes.LOAD_CUSTOMER_FAIL;
+export class LoadHomeFail implements Action {
+  readonly type = HomeActionTypes.LOAD_HOME_FAIL;
 
   constructor(public payload: string) {}
 }
 
-export class CreateCustomer implements Action {
-  readonly type = CustomerActionTypes.CREATE_CUSTOMER;
+export class CreateHome implements Action {
+  readonly type = HomeActionTypes.CREATE_HOME;
 
-  constructor(public payload: Customer) {}
+  constructor(public payload: Home) {}
 }
 
-export class CreateCustomerSuccess implements Action {
-  readonly type = CustomerActionTypes.CREATE_CUSTOMER_SUCCESS;
+export class CreateHomeSuccess implements Action {
+  readonly type = HomeActionTypes.CREATE_HOME_SUCCESS;
 
-  constructor(public payload: Customer) {}
+  constructor(public payload: Home) {}
 }
 
-export class CreateCustomerFail implements Action {
-  readonly type = CustomerActionTypes.CREATE_CUSTOMER_FAIL;
+export class CreateHomeFail implements Action {
+  readonly type = HomeActionTypes.CREATE_HOME_FAIL;
 
   constructor(public payload: string) {}
 }
 
-export class UpdateCustomer implements Action {
-  readonly type = CustomerActionTypes.UPDATE_CUSTOMER;
+export class UpdateHome implements Action {
+  readonly type = HomeActionTypes.UPDATE_HOME;
 
-  constructor(public payload: Customer) {}
+  constructor(public payload: Home) {}
 }
 
-export class UpdateCustomerSuccess implements Action {
-  readonly type = CustomerActionTypes.UPDATE_CUSTOMER_SUCCESS;
+export class UpdateHomeSuccess implements Action {
+  readonly type = HomeActionTypes.UPDATE_HOME_SUCCESS;
 
-  constructor(public payload: Update<Customer>) {}
+  constructor(public payload: Update<Home>) {}
 }
 
-export class UpdateCustomerFail implements Action {
-  readonly type = CustomerActionTypes.UPDATE_CUSTOMER_FAIL;
+export class UpdateHomeFail implements Action {
+  readonly type = HomeActionTypes.UPDATE_HOME_FAIL;
 
   constructor(public payload: string) {}
 }
 
-export class DeleteCustomer implements Action {
-  readonly type = CustomerActionTypes.DELETE_CUSTOMER;
+export class DeleteHome implements Action {
+  readonly type = HomeActionTypes.DELETE_HOME;
 
   constructor(public payload: number) {}
 }
 
-export class DeleteCustomerSuccess implements Action {
-  readonly type = CustomerActionTypes.DELETE_CUSTOMER_SUCCESS;
+export class DeleteHomeSuccess implements Action {
+  readonly type = HomeActionTypes.DELETE_HOME_SUCCESS;
 
   constructor(public payload: number) {}
 }
 
-export class DeleteCustomerFail implements Action {
-  readonly type = CustomerActionTypes.DELETE_CUSTOMER_FAIL;
+export class DeleteHomeFail implements Action {
+  readonly type = HomeActionTypes.DELETE_HOME_FAIL;
 
   constructor(public payload: string) {}
 }
 
 export type Action =
-  | LoadCustomers
-  | LoadCustomersSuccess
-  | LoadCustomersFail
-  | LoadCustomer
-  | LoadCustomerSuccess
-  | LoadCustomerFail
-  | CreateCustomer
-  | CreateCustomerSuccess
-  | CreateCustomerFail
-  | UpdateCustomer
-  | UpdateCustomerSuccess
-  | UpdateCustomerFail
-  | DeleteCustomer
-  | DeleteCustomerSuccess
-  | DeleteCustomerFail;
+  | LoadHomes
+  | LoadHomesSuccess
+  | LoadHomesFail
+  | LoadHome
+  | LoadHomeSuccess
+  | LoadHomeFail
+  | CreateHome
+  | CreateHomeSuccess
+  | CreateHomeFail
+  | UpdateHome
+  | UpdateHomeSuccess
+  | UpdateHomeFail
+  | DeleteHome
+  | DeleteHomeSuccess
+  | DeleteHomeFail;

@@ -5,7 +5,6 @@ import * as teamActions from './state/admin.actions';
 import * as fromTeam from './state/admin.reducer';
 import {select, Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
-import {AdminService} from './admin.service';
 
 @Component({
   selector: 'app-admin',
@@ -27,7 +26,7 @@ export class AdminComponent implements OnInit {
   teams$: Observable<Team[]>;
   error$: Observable<string>;
 
-  constructor(private store: Store<fromTeam.AppState>, private matchService: AdminService) { }
+  constructor(private store: Store<fromTeam.AppState>) { }
 
   ngOnInit() {
     this.store.dispatch(new teamActions.LoadTeams());

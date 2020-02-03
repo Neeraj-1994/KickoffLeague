@@ -17,7 +17,7 @@ export class BetService {
     return this.http.get<Bet[]>(this.BetsUrl);
   }
 
-  getBetById(payload: number): Observable<Bet> {
+  getBetByName(payload: string): Observable<Bet> {
     return this.http.get<Bet>(`${this.BetsUrl}/${payload}`);
   }
 
@@ -27,7 +27,7 @@ export class BetService {
 
   updateBet(bet: Bet): Observable<Bet> {
     return this.http.patch<Bet>(
-      `${this.BetsUrl}/${bet.Name}`,
+      `${this.BetsUrl}/${bet.firstName}`,
       bet
     );
   }

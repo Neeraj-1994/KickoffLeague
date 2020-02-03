@@ -1,101 +1,101 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 
-import { Actions, Effect, ofType } from "@ngrx/effects";
-import { Action } from "@ngrx/store";
+import { Actions, Effect, ofType } from '@ngrx/effects';
+import { Action } from '@ngrx/store';
 
-import { Observable, of } from "rxjs";
-import { map, mergeMap, catchError } from "rxjs/operators";
+import { Observable, of } from 'rxjs';
+import { map, mergeMap, catchError } from 'rxjs/operators';
 
-import { CustomerService } from "../customer.service";
-import * as customerActions from "../state/customer.actions";
-import { Customer } from "../customer.model";
+import { HomeService } from "../home.service";
+import * as homeActions from "./home.actions";
+import { Home } from "../home.model";
 
 @Injectable()
-export class CustomerEffect {
+export class HomeEffect {
   constructor(
     private actions$: Actions,
-    private customerService: CustomerService
+    private homeService: HomeService
   ) {}
 
   @Effect()
-  loadCustomers$: Observable<Action> = this.actions$.pipe(
-    ofType<customerActions.LoadCustomers>(
-      customerActions.CustomerActionTypes.LOAD_CUSTOMERS
+  loadHomes$: Observable<Action> = this.actions$.pipe(
+    ofType<homeActions.LoadHomes>(
+      homeActions.HomeActionTypes.LOAD_HOMES
     ),
-    mergeMap((action: customerActions.LoadCustomers) =>
-      this.customerService.getCustomers().pipe(
+    mergeMap((action: homeActions.LoadHomes) =>
+      this.homeService.getHomes().pipe(
         map(
-          (customers: Customer[]) =>
-            new customerActions.LoadCustomersSuccess(customers)
+          (homes: Home[]) =>
+            new homeActions.LoadHomesSuccess(homes)
         ),
-        catchError(err => of(new customerActions.LoadCustomersFail(err)))
+        catchError(err => of(new homeActions.LoadHomesFail(err)))
       )
     )
   );
 
   @Effect()
-  loadCustomer$: Observable<Action> = this.actions$.pipe(
-    ofType<customerActions.LoadCustomer>(
-      customerActions.CustomerActionTypes.LOAD_CUSTOMER
+  loadHome$: Observable<Action> = this.actions$.pipe(
+    ofType<homeActions.LoadHome>(
+      homeActions.HomeActionTypes.LOAD_HOME
     ),
-    mergeMap((action: customerActions.LoadCustomer) =>
-      this.customerService.getCustomerById(action.payload).pipe(
+    mergeMap((action: homeActions.LoadHome) =>
+      this.homeService.getHomeById(action.payload).pipe(
         map(
-          (customer: Customer) =>
-            new customerActions.LoadCustomerSuccess(customer)
+          (home: Home) =>
+            new homeActions.LoadHomeSuccess(home)
         ),
-        catchError(err => of(new customerActions.LoadCustomerFail(err)))
+        catchError(err => of(new homeActions.LoadHomeFail(err)))
       )
     )
   );
 
   @Effect()
-  createCustomer$: Observable<Action> = this.actions$.pipe(
-    ofType<customerActions.CreateCustomer>(
-      customerActions.CustomerActionTypes.CREATE_CUSTOMER
+  createHome$: Observable<Action> = this.actions$.pipe(
+    ofType<homeActions.CreateHome>(
+      homeActions.HomeActionTypes.CREATE_HOME
     ),
-    map((action: customerActions.CreateCustomer) => action.payload),
-    mergeMap((customer: Customer) =>
-      this.customerService.createCustomer(customer).pipe(
+    map((action: homeActions.CreateHome) => action.payload),
+    mergeMap((home: Home) =>
+      this.homeService.createHome(home).pipe(
         map(
-          (newCustomer: Customer) =>
-            new customerActions.CreateCustomerSuccess(newCustomer)
+          (newHome: Home) =>
+            new homeActions.CreateHomeSuccess(newHome)
         ),
-        catchError(err => of(new customerActions.CreateCustomerFail(err)))
+        catchError(err => of(new homeActions.CreateHomeFail(err)))
       )
     )
   );
 
   @Effect()
-  updateCustomer$: Observable<Action> = this.actions$.pipe(
-    ofType<customerActions.UpdateCustomer>(
-      customerActions.CustomerActionTypes.UPDATE_CUSTOMER
+  updateHome$: Observable<Action> = this.actions$.pipe(
+    ofType<homeActions.UpdateHome>(
+      homeActions.HomeActionTypes.UPDATE_HOME
     ),
-    map((action: customerActions.UpdateCustomer) => action.payload),
-    mergeMap((customer: Customer) =>
-      this.customerService.updateCustomer(customer).pipe(
+    map((action: homeActions.UpdateHome) => action.payload),
+    mergeMap((home: Home) =>
+      this.homeService.updateHome(home).pipe(
         map(
-          (updateCustomer: Customer) =>
-            new customerActions.UpdateCustomerSuccess({
-              id: updateCustomer.id,
-              changes: updateCustomer
+          (updateHome: Home) =>
+            new homeActions.UpdateHomeSuccess({
+              id: updateHome.id,
+              changes: updateHome
             })
         ),
-        catchError(err => of(new customerActions.UpdateCustomerFail(err)))
+        catchError(err => of(new homeActions.UpdateHomeFail(err)))
       )
     )
   );
 
   @Effect()
-  deleteCustomer$: Observable<Action> = this.actions$.pipe(
-    ofType<customerActions.DeleteCustomer>(
-      customerActions.CustomerActionTypes.DELETE_CUSTOMER
+  deleteHome$: Observable<Action> = this.actions$.pipe(
+    ofType<homeActions.DeleteHome>(
+      homeActions.HomeActionTypes.DELETE_HOME
     ),
-    map((action: customerActions.DeleteCustomer) => action.payload),
+    map((action: homeActions.DeleteHome) => action.payload),
     mergeMap((id: number) =>
-      this.customerService.deleteCustomer(id).pipe(
-        map(() => new customerActions.DeleteCustomerSuccess(id)),
-        catchError(err => of(new customerActions.DeleteCustomerFail(err)))
+      this.homeService.deleteHome(id).pipe(
+        map(() => new homeActions.DeleteHomeSuccess(id)),
+        catchError(err => of(new homeActions.DeleteHomeFail(err)))
       )
     )
   );

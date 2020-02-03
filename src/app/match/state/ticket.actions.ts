@@ -2,7 +2,7 @@ import { Action } from '@ngrx/store';
 
 import { Update } from '@ngrx/entity';
 
-import { Ticket } from '../ticket.model';
+import { Ticket} from '../ticket.model';
 
 export enum TicketActionTypes {
   LOAD_TICKETS = '[Ticket] Load Tickets',
@@ -41,7 +41,7 @@ export class LoadTicketsFail implements Action {
 export class LoadTicket implements Action {
   readonly type = TicketActionTypes.LOAD_TICKET;
 
-  constructor(public payload: number) {}
+  constructor(public payload: string) {}
 }
 
 export class LoadTicketSuccess implements Action {

@@ -6,9 +6,9 @@ import { Action } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 import { map, mergeMap, catchError } from 'rxjs/operators';
 
-import { TicketService } from '../ticket.service';
-import * as ticketActions from '../state/ticket.actions';
-import { Ticket } from '../ticket.model';
+import { TicketService} from '../ticket.service';
+import * as ticketActions from './ticket.actions';
+import { Ticket} from '../ticket.model';
 
 @Injectable()
 export class TicketEffect {
@@ -39,7 +39,7 @@ export class TicketEffect {
       ticketActions.TicketActionTypes.LOAD_TICKET
     ),
     mergeMap((action: ticketActions.LoadTicket) =>
-      this.ticketService.getTicketById(action.payload).pipe(
+      this.ticketService.getTicketByName(action.payload).pipe(
         map(
           (ticket: Ticket) =>
             new ticketActions.LoadTicketSuccess(ticket)
@@ -77,7 +77,7 @@ export class TicketEffect {
         map(
           (updateTicket: Ticket) =>
             new ticketActions.UpdateTicketSuccess({
-              id: updateTicket.Name,
+              id: updateTicket.id,
               changes: updateTicket
             })
         ),

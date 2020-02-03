@@ -1,50 +1,50 @@
-import * as customerActions from "./customer.actions";
-import { createFeatureSelector, createSelector } from "@ngrx/store";
+import * as homeActions from './home.actions';
+import { createFeatureSelector, createSelector } from '@ngrx/store';
 
-import { EntityState, EntityAdapter, createEntityAdapter } from "@ngrx/entity";
+import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 
-import { Customer } from "../customer.model";
-import * as fromRoot from "../../state/app-state";
+import { Home } from '../home.model';
+import * as fromRoot from '../../state/app-state';
 
-export interface CustomerState extends EntityState<Customer> {
-  selectedCustomerId: number | null;
+export interface HomeState extends EntityState<Home> {
+  selectedHomeId: number | null;
   loading: boolean;
   loaded: boolean;
   error: string;
 }
 
 export interface AppState extends fromRoot.AppState {
-  customers: CustomerState;
+  homes: HomeState;
 }
 
-export const customerAdapter: EntityAdapter<Customer> = createEntityAdapter<
-  Customer
+export const homeAdapter: EntityAdapter<Home> = createEntityAdapter<
+  Home
 >();
 
-export const defaultCustomer: CustomerState = {
+export const defaultHome: HomeState = {
   ids: [],
   entities: {},
-  selectedCustomerId: null,
+  selectedHomeId: null,
   loading: false,
   loaded: false,
-  error: ""
+  error: ''
 };
 
-export const initialState = customerAdapter.getInitialState(defaultCustomer);
+export const initialState = homeAdapter.getInitialState(defaultHome);
 
-export function customerReducer(
+export function homeReducer(
   state = initialState,
-  action: customerActions.Action
-): CustomerState {
+  action: homeActions.Action
+): HomeState {
   switch (action.type) {
-    case customerActions.CustomerActionTypes.LOAD_CUSTOMERS_SUCCESS: {
-      return customerAdapter.addAll(action.payload, {
+    case homeActions.HomeActionTypes.LOAD_HOMES_SUCCESS: {
+      return homeAdapter.addAll(action.payload, {
         ...state,
         loading: false,
         loaded: true
       });
     }
-    case customerActions.CustomerActionTypes.LOAD_CUSTOMERS_FAIL: {
+    case homeActions.HomeActionTypes.LOAD_HOMES_FAIL: {
       return {
         ...state,
         entities: {},
@@ -54,43 +54,43 @@ export function customerReducer(
       };
     }
 
-    case customerActions.CustomerActionTypes.LOAD_CUSTOMER_SUCCESS: {
-      return customerAdapter.addOne(action.payload, {
+    case homeActions.HomeActionTypes.LOAD_HOME_SUCCESS: {
+      return homeAdapter.addOne(action.payload, {
         ...state,
-        selectedCustomerId: action.payload.id
+        selectedHomeId: action.payload.id
       });
     }
-    case customerActions.CustomerActionTypes.LOAD_CUSTOMER_FAIL: {
+    case homeActions.HomeActionTypes.LOAD_HOME_FAIL: {
       return {
         ...state,
         error: action.payload
       };
     }
 
-    case customerActions.CustomerActionTypes.CREATE_CUSTOMER_SUCCESS: {
-      return customerAdapter.addOne(action.payload, state);
+    case homeActions.HomeActionTypes.CREATE_HOME_SUCCESS: {
+      return homeAdapter.addOne(action.payload, state);
     }
-    case customerActions.CustomerActionTypes.CREATE_CUSTOMER_FAIL: {
+    case homeActions.HomeActionTypes.CREATE_HOME_FAIL: {
       return {
         ...state,
         error: action.payload
       };
     }
 
-    case customerActions.CustomerActionTypes.UPDATE_CUSTOMER_SUCCESS: {
-      return customerAdapter.updateOne(action.payload, state);
+    case homeActions.HomeActionTypes.UPDATE_HOME_SUCCESS: {
+      return homeAdapter.updateOne(action.payload, state);
     }
-    case customerActions.CustomerActionTypes.UPDATE_CUSTOMER_FAIL: {
+    case homeActions.HomeActionTypes.UPDATE_HOME_FAIL: {
       return {
         ...state,
         error: action.payload
       };
     }
 
-    case customerActions.CustomerActionTypes.DELETE_CUSTOMER_SUCCESS: {
-      return customerAdapter.removeOne(action.payload, state);
+    case homeActions.HomeActionTypes.DELETE_HOME_SUCCESS: {
+      return homeAdapter.removeOne(action.payload, state);
     }
-    case customerActions.CustomerActionTypes.DELETE_CUSTOMER_FAIL: {
+    case homeActions.HomeActionTypes.DELETE_HOME_FAIL: {
       return {
         ...state,
         error: action.payload
@@ -103,36 +103,36 @@ export function customerReducer(
   }
 }
 
-const getCustomerFeatureState = createFeatureSelector<CustomerState>(
-  "customers"
+const getHomeFeatureState = createFeatureSelector<HomeState>(
+  'homes'
 );
 
-export const getCustomers = createSelector(
-  getCustomerFeatureState,
-  customerAdapter.getSelectors().selectAll
+export const getHomes = createSelector(
+  getHomeFeatureState,
+  homeAdapter.getSelectors().selectAll
 );
 
-export const getCustomersLoading = createSelector(
-  getCustomerFeatureState,
-  (state: CustomerState) => state.loading
+export const getHomesLoading = createSelector(
+  getHomeFeatureState,
+  (state: HomeState) => state.loading
 );
 
-export const getCustomersLoaded = createSelector(
-  getCustomerFeatureState,
-  (state: CustomerState) => state.loaded
+export const getHomesLoaded = createSelector(
+  getHomeFeatureState,
+  (state: HomeState) => state.loaded
 );
 
 export const getError = createSelector(
-  getCustomerFeatureState,
-  (state: CustomerState) => state.error
+  getHomeFeatureState,
+  (state: HomeState) => state.error
 );
 
-export const getCurrentCustomerId = createSelector(
-  getCustomerFeatureState,
-  (state: CustomerState) => state.selectedCustomerId
+export const getCurrentHomeId = createSelector(
+  getHomeFeatureState,
+  (state: HomeState) => state.selectedHomeId
 );
-export const getCurrentCustomer = createSelector(
-  getCustomerFeatureState,
-  getCurrentCustomerId,
-  state => state.entities[state.selectedCustomerId]
+export const getCurrentHome = createSelector(
+  getHomeFeatureState,
+  getCurrentHomeId,
+  state => state.entities[state.selectedHomeId]
 );

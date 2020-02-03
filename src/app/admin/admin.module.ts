@@ -11,6 +11,7 @@ import {EffectsModule} from '@ngrx/effects';
 import {TeamEffect} from './state/admin.effect';
 import {AdminService} from './admin.service';
 import { FixtureComponent } from './fixture/fixture.component';
+import {ToastrModule, ToastrService} from 'ngx-toastr';
 
 
 @NgModule({
@@ -21,9 +22,10 @@ import { FixtureComponent } from './fixture/fixture.component';
     ReactiveFormsModule,
     FormsModule,
     FontAwesomeModule,
+    ToastrModule,
     StoreModule.forFeature('teams', teamReducer),
     EffectsModule.forFeature([TeamEffect])
   ],
-  providers: [AdminService]
+  providers: [AdminService, ToastrService]
 })
 export class AdminModule { }

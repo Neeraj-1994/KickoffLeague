@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {faMoneyBill} from '@fortawesome/free-solid-svg-icons';
+import {faMoneyBill, faWindowClose} from '@fortawesome/free-solid-svg-icons';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Store} from '@ngrx/store';
-import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 
@@ -20,9 +19,9 @@ import {Bet} from './bet.model';
 })
 export class MatchBetComponent implements OnInit {
           betIcon = faMoneyBill;
+          closeIcon = faWindowClose;
           teams = [];
           betForm: FormGroup;
-          public submitted = false;
 
   // Form Component Shortening
   get firstName() {
@@ -58,7 +57,7 @@ export class MatchBetComponent implements OnInit {
 
           constructor(private fb: FormBuilder, private store: Store<fromBet.AppState>,
                       private router: Router, private toastr: ToastrService,
-                      private matchService: BetService, private modalService: NgbModal) {}
+                      private matchService: BetService) {}
 
                       ngOnInit() {
             this.betForm = this.fb.group({
@@ -79,6 +78,7 @@ export class MatchBetComponent implements OnInit {
               .subscribe(data => this.teams = data);
           }
 
+
   createBet() {
     const newBet: Bet = {
       id: this.betForm.get('id').value,
@@ -95,9 +95,6 @@ export class MatchBetComponent implements OnInit {
     };
 
     this.store.dispatch(new betActions.CreateBet(newBet));
-    this.toastr.success('Thank you for betting!', 'Success!');
-    this.submitted = true;
-
-    this.betForm.reset();
+    this.router.navigate(['/Home']);
   }
 }

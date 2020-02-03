@@ -1,84 +1,82 @@
-<form [formGroup]="fixtureForm" (ngSubmit)="createMatch()">
+<div class="row justify-content-center mt-3 mb-3">
+  <form [formGroup]="fixtureForm" (ngSubmit)="createMatch()">
 
-  <div class="card border border-rounded">
+    <div class="card border border-rounded">
 
-    <div class="card-header" style="background-image: linear-gradient(to right, darkblue, blue, lightblue, white)">
+      <div class="card-header" style="background-image: linear-gradient(to right, darkblue, blue, lightblue, white)">
 
-      <div style="font-size: 20px; text-align: center;" class="form-group">
-          <input type="readonly" formControlName="MatchName" [value]="matchName" class="form-control text-center">
+        <div style="font-size: 20px; text-align: center;" class="form-group">
+            <input #match type="readonly" formControlName="MatchName" [value]="matchName" class="form-control text-center">
+        </div>
+
       </div>
 
-    </div>
+      <div class="card-body bg-info">
 
-    <div class="card-body bg-info">
+        <div class="form-row">
 
-      <div class="form-row">
-
-        <div class="form-group">
+        <div class="col form-group">
           <label>Stadium: </label>
-            <select class="form-control" formControlName="Stadium">
+            <select class="form-control" formControlName="Stadium" [class.is-invalid]="stadium.invalid && stadium.touched">
               <option *ngFor="let stadium of Stadium" [value]="stadium">{{stadium}}</option>
             </select>
+          <small [class.d-none]="stadium.valid || stadium.untouched" class="text-danger">Select a Stadium</small>
         </div>
 
-        <div class="form-group">
+        <div class="col form-group">
         <label>Date: </label>
-            <input type="date" class="form-control" formControlName="Date">
+            <input type="date" class="form-control" formControlName="Date" [class.is-invalid]="date.invalid && date.touched">
+          <small [class.d-none]="date.valid || date.untouched" class="text-danger">Choose a Date</small>
         </div>
 
-      </div>
-
-      <div class="form-row">
-
-        <div class="form-group">
+        <div class="col form-group">
         <label>Time: </label>
-            <input type="time" class="form-control" formControlName="Time">
+            <input type="time" class="form-control" formControlName="Time" [class.is-invalid]="time.invalid && time.touched">
+          <small [class.d-none]="time.valid || time.untouched" class="text-danger">Choose a Time</small>
         </div>
 
-        <div class="form-group">
+        <div class="col form-group">
         <label>Ticket Cost: </label>
-            <input type="number" class="form-control" formControlName="TicketCost">
+            <input type="number" class="form-control" formControlName="TicketCost" [class.is-invalid]="ticket.invalid && ticket.touched">
+          <small [class.d-none]="ticket.valid || ticket.untouched" class="text-danger">Choose a Ticket Cost</small>
         </div>
 
       </div>
 
       <div class="form-row">
 
-        <div class="form-group">
+        <div class="col form-group">
           <label>Referee: </label>
-            <select class="form-control" formControlName="Referee">
+            <select class="form-control" formControlName="Referee" [class.is-invalid]="ref.invalid && ref.touched">
+              <small [class.d-none]="ref.valid || ref.untouched" class="text-danger">Choose a Referee</small>
               <option *ngFor="let referee of officials" [value]="referee">{{referee}}</option>
             </select>
           </div>
 
-        <div class="form-group">
+        <div class="col form-group">
         <label>Linesmen: </label>
-            <select class="form-control" formControlName="Linesman1">
+            <select class="form-control" formControlName="Linesman1" [class.is-invalid]="lines1.invalid && lines1.touched">
               <option *ngFor="let linesmen of linesman" [value]="linesmen">{{linesmen}}</option>
             </select>
-          <label>
+          <small [class.d-none]="lines1.valid || lines1.untouched" class="text-danger">Choose a linesman</small>
+          <br>
             <select class="form-control" formControlName="Linesman2" [class.is-invalid]="fixtureForm.errors?.misMatch">
               <option *ngFor="let linesmen of linesman" [value]="linesmen">{{linesmen}}</option>
-              <small class="text-danger" *ngIf="fixtureForm.errors?.misMatch">Do not select same linesmen</small>
             </select>
-          </label>
+          <small class="text-danger" *ngIf="fixtureForm.errors?.misMatch">Do not select same linesmen</small>
         </div>
 
       </div>
 
       <div class="form-row">
 
-        <div class="form-group">
-          <label>
+        <div class="col form-group">
             <input type="readonly" formControlName="Team1Name" [value]="team.Name" class="form-control text-center">
-          </label>
         </div>
 
-        <div class="form-group">
-          <label>
+        <div class="col form-group">
             <input type="readonly" formControlName="Team2Name" [value]="team2.Name" class="form-control text-center"
                    [class.is-invalid]="fixtureForm.errors?.misMatch1">
-          </label>
           <small class="text-danger" *ngIf="fixtureForm.errors?.misMatch1">Do not select same team</small>
         </div>
 
@@ -86,91 +84,96 @@
 
       <div class="form-row">
 
-        <div class="form-group">
+        <div class="col form-group">
           <label>Manager: </label>
-          <label>
             <input type="readonly" formControlName="Team1Manager" [value]="team.Manager" class="form-control text-center">
-          </label>
         </div>
 
-        <div class="form-group">
+        <div class="col form-group">
+          <label>Coach: </label>
+          <input type="readonly" formControlName="Team1Coach" [value]="team.Coach" class="form-control text-center">
+        </div>
+
+        <div class="col form-group">
           <label>Manager: </label>
-          <label>
             <input type="readonly" formControlName="Team2Manager" [value]="team2.Manager" class="form-control text-center">
-          </label>
         </div>
 
-      </div>
-
-      <div class="form-row">
-
-        <div class="form-group">
+        <div class="col form-group">
           <label>Coach: </label>
-          <label>
-            <input type="readonly" formControlName="Team1Coach" [value]="team.Coach" class="form-control text-center">
-          </label>
-        </div>
-
-        <div class="form-group">
-          <label>Coach: </label>
-          <label>
             <input type="readonly" formControlName="Team2Coach" [value]="team2.Coach" class="form-control text-center">
-          </label>
         </div>
 
       </div>
 
       <div class="form-row">
 
-        <div class="form-group">
-          <label>Name</label>
-          <div *ngFor="let child of fixtureForm.get('Team1.Players').controls; let i=index">
-            <div [formGroupName]="i">
-              <input type="readonly" formControlName="Name" class="form-control">
-            </div>
-          </div>
+        <div class="col form-group">
+          <table class="table" id="Team1">
+            <thead class="thead-dark">
+            <tr>
+              <th>Name</th>
+              <th>T-shirt No.</th>
+              <th>Role</th>
+            </tr>
+            </thead>
+            <tbody class="bg-white">
+            <tr *ngFor="let player of team.Players">
+              <td>{{player.Name}}</td>
+              <td>{{player.tNumber}}</td>
+              <td>{{player.Role}}</td>
+            </tr>
+            </tbody>
+          </table>
         </div>
 
-        <div class="form-group">
-          <label>T-shirt Number</label>
-          <div *ngFor="let child of fixtureForm.get('Team1Players').controls; let i=index">
-              <div [formGroupName]="i">
-              <input type="readonly" formControlName="tNumber" class="form-control">
-              </div>
-          </div>
-        </div>
-
-        <div class="form-group">
-        <label>Role</label>
-          <div *ngFor="let child of fixtureForm.get('Team1Players').controls; let i=index">
-            <div [formGroupName]="i">
-              <input type="readonly" formControlName="Role" class="form-control">
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group">
-        <label>Name</label>
-          <div></div>
-        </div>
-
-        <div class="form-group">
-        <label>T-shirt Number</label>
-          <div></div>
-        </div>
-
-        <div class="form-group">
-        <label>Role</label>
-          <div></div>
+        <div class="col form-group">
+          <table class="table" id="Team2">
+            <thead class="thead-dark">
+            <tr>
+              <th>Name</th>
+              <th>T-shirt No.</th>
+              <th>Role</th>
+            </tr>
+            </thead>
+            <tbody class="bg-white">
+            <tr *ngFor="let player of team2.Players">
+              <td>{{player.Name}}</td>
+              <td>{{player.tNumber}}</td>
+              <td>{{player.Role}}</td>
+            </tr>
+            </tbody>
+          </table>
         </div>
 
       </div>
 
       <div class="form-group">
-          <button type="submit" class="btn btn-warning">Create Match</button>
+          <button type="submit" class="btn btn-warning btn-block" [disabled]="!fixtureForm.valid"
+                  data-toggle="modal" data-target="#myModal">Create Match</button>
       </div>
 
     </div>
   </div>
 </form>
+</div>
 
+<div class="modal" id="myModal" role="dialog"><!-- Modal starts -->
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header bg-success">
+        <h4 class="modal-title"> Fixture Creation Successful! </h4>
+        <button type="button" class="close" data-dismiss="modal"> <fa-icon [icon]="closeIcon"></fa-icon> </button>
+      </div>
+      <div class="modal-body">
+        <p>{{match.value}} match has been successfully created.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div><!-- Modal ends -->
