@@ -14,6 +14,7 @@ import {TicketEffect} from './state/ticket.effect';
 
 import {TicketService} from './ticket.service';
 
+
 @NgModule({
   declarations: [MatchComponent],
   imports: [

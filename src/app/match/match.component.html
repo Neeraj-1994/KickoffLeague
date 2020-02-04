@@ -58,6 +58,7 @@
                      [class.is-invalid]="CardNumber.invalid && CardNumber.touched" formControlName="CardNumber">
               <div *ngIf="CardNumber.invalid && CardNumber.touched">&nbsp;
                 <small *ngIf="CardNumber.errors?.required" class="text-danger">Card Number is required</small>
+                <small *ngIf="CardNumber.errors?.minLength" class="text-danger">Card Number must be at least 16 numbers</small>
               </div>
             </div> <!-- form-group end -->
 
@@ -67,14 +68,18 @@
                      [class.is-invalid]="cVV.invalid && cVV.touched" formControlName="cVV">
               <div *ngIf="cVV.invalid && cVV.touched">
                 <small *ngIf="cVV.errors?.required" class="text-danger">CVV is required</small>
+                <small *ngIf="cVV.errors?.minLength" class="text-danger">CVV must be 3 numbers</small>
+                <small *ngIf="cVV.errors?.maxLength" class="text-danger">CVV is only 3 numbers</small>
               </div>
             </div> <!-- form-group end -->
 
             <div class="col form-group">
               <label>Expiry Date</label>
-              <input #expDate class="form-control" type="month" placeholder="month,year"
+              <input #expDate class="form-control" type="month" placeholder="mm,yy"
                      [class.is-invalid]="ExpiryDate.invalid && ExpiryDate.touched" formControlName="ExpiryDate">
-              <small [class.d-none]="ExpiryDate.valid || ExpiryDate.untouched" class="text-danger">Select a month and a year</small>
+              <div *ngIf="ExpiryDate.invalid && ExpiryDate.touched">
+                <small *ngIf="ExpiryDate.errors?.required" class="text-danger">Enter a specific expiry date</small>
+              </div>
             </div> <!-- form-group end -->
 
           </div> <!-- form-row end -->
@@ -85,9 +90,12 @@
 
             <div class="col form-group">
               <label>Select Match</label>
-              <select #match class="form-control" formControlName="Match">
+              <select #match class="form-control" formControlName="Match" [class.is-invalid]="Match.invalid && Match.touched">
                 <option *ngFor="let team of teams" [value]="team.MatchName">{{team.MatchName}}</option>
               </select>
+              <div *ngIf="Match.invalid && Match.touched">
+                <small *ngIf="Match.errors?.required" class="text-danger">Select a match</small>
+              </div>
             </div> <!-- form group end -->
 
           </div> <!-- form-row end -->

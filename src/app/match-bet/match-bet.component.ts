@@ -65,8 +65,8 @@ export class MatchBetComponent implements OnInit {
               firstName: ['', Validators.required],
               lastName: ['', Validators.required],
               email: ['', [Validators.required, Validators.email]],
-              CardNumber: ['', [Validators.required]],
-              cVV: ['', [Validators.required]],
+              CardNumber: ['', [Validators.required, Validators.minLength(3)]],
+              cVV: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(4)]],
               ExpiryDate: ['', Validators.required],
               Match: ['', Validators.required],
               SelTeam: ['', Validators.required],
@@ -95,6 +95,7 @@ export class MatchBetComponent implements OnInit {
     };
 
     this.store.dispatch(new betActions.CreateBet(newBet));
+    this.betForm.reset();
     this.router.navigate(['/Home']);
   }
 }

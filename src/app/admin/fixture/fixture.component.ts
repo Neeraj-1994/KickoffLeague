@@ -106,7 +106,6 @@ export class FixtureComponent implements OnInit {
         error => {
           console.log('Error', error);
         });
-    this.toastr.success('Match has been created. Go to Home Page to view.', 'Match Creation Success!');
   }
 
 

@@ -57,6 +57,7 @@
                      [class.is-invalid]="CardNumber.invalid && CardNumber.touched" formControlName="CardNumber">
               <div *ngIf="CardNumber.invalid && CardNumber.touched">&nbsp;
                 <small *ngIf="CardNumber.errors?.required" class="text-danger">Card Number is required</small>
+                <small *ngIf="CardNumber.errors?.minLength" class="text-danger">Card Number must be at least 16 numbers</small>
               </div>
             </div> <!-- form-group end -->
 
@@ -66,6 +67,8 @@
                      [class.is-invalid]="cVV.invalid && cVV.touched" formControlName="cVV">
               <div *ngIf="cVV.invalid && cVV.touched">
                 <small *ngIf="cVV.errors?.required" class="text-danger">CVV is required</small>
+                <small *ngIf="cVV.errors?.minLength" class="text-danger">CVV must be at least 3 numbers</small>
+                <small *ngIf="cVV.errors?.maxLength" class="text-danger">CVV is only 3 numbers</small>
               </div>
             </div> <!-- form-group end -->
 
@@ -73,7 +76,9 @@
               <label>Expiry Date</label>
               <input #expDate class="form-control" type="month" placeholder="month,year"
                      [class.is-invalid]="ExpiryDate.invalid && ExpiryDate.touched" formControlName="ExpiryDate">
-              <small [class.d-none]="ExpiryDate.valid || ExpiryDate.untouched" class="text-danger">Select a month and a year</small>
+              <div *ngIf="ExpiryDate.invalid && ExpiryDate.touched">
+                <small *ngIf="ExpiryDate.errors?.required" class="text-danger">Enter a valid expiry date</small>
+              </div>
             </div> <!-- form-group end -->
 
           </div> <!-- form-row end -->
@@ -89,7 +94,9 @@
                 <option></option>
                 <option *ngFor="let team of teams">{{team.MatchName}}</option>
               </select>
-              <small [class.d-none]="Match.valid || Match.untouched" class="text-danger">Select a match</small>
+              <div *ngIf="Match.invalid && Match.touched">
+                <small *ngIf="Match.errors?.required" class="text-danger">Select a Match</small>
+              </div>
             </div><!-- form group end -->
 
             <div class="col form-group">
@@ -99,7 +106,9 @@
                 <option *ngFor="let team of teams" [value]="team.Team1Name">{{team.Team1Name}}</option>
                 <option *ngFor="let team of teams" [value]="team.Team2Name">{{team.Team2Name}}</option>
               </select>
-              <small [class.d-none]="SelTeam.valid || SelTeam.untouched" class="text-danger">Select a team</small>
+              <div *ngIf="SelTeam.invalid && SelTeam.touched">
+                <small *ngIf="SelTeam.errors?.required" class="text-danger">Select a Team</small>
+              </div>
             </div> <!-- form group end -->
 
           </div> <!-- form-row end -->
@@ -110,14 +119,18 @@
               <label>Final Score</label>
               <input #fScore class="form-control" type="text" placeholder="Team Selected - Team Against"
                      [class.is-invalid]="FinalScore.invalid && FinalScore.touched" formControlName="FinalScore">
-              <small [class.d-none]="FinalScore.valid || FinalScore.untouched" class="text-danger">Score is required</small>
+              <div *ngIf="FinalScore.invalid && FinalScore.touched">
+                <small *ngIf="FinalScore.errors?.required" class="text-danger">Enter a predicted score</small>
+              </div>
             </div> <!-- form-group end -->
 
             <div class="col form-group">
               <label>Bet Amount</label>
               <input #bAmount class="form-control" type="number" placeholder="(In Ngultrums)"
                      [class.is-invalid]="BetAmount.invalid && BetAmount.touched" formControlName="BetAmount">
-              <small [class.d-none]="BetAmount.valid || BetAmount.untouched" class="text-danger">Please place a amount to bet</small>
+              <div *ngIf="BetAmount.invalid && BetAmount.touched">
+                <small *ngIf="BetAmount.errors?.required" class="text-danger">Enter an amount to bet</small>
+              </div>
             </div> <!-- form-group end -->
 
           </div> <!-- form-row end -->

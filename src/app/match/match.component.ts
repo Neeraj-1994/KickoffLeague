@@ -61,8 +61,8 @@ export class MatchComponent implements OnInit {
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      CardNumber: ['', [Validators.required]],
-      cVV: ['', [Validators.required]],
+      CardNumber: ['', [Validators.required, Validators.minLength(16)]],
+      cVV: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(4)]],
       ExpiryDate: ['', Validators.required],
       Match: ['', Validators.required]
     });
@@ -84,6 +84,7 @@ export class MatchComponent implements OnInit {
     };
 
     this.store.dispatch(new ticketActions.CreateTicket(newTicket));
+    this.ticketingForm.reset();
     this.router.navigate(['/Home']);
   }
 }

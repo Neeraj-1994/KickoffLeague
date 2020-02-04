@@ -907,6 +907,177 @@
         }
       ],
       "id": 5
+    },
+    {
+      "MatchName": "Manchester United vs Chelsea",
+      "Stadium": "City of Manchester Stadium",
+      "Date": "2020-02-23",
+      "Time": "21:00",
+      "TicketCost": 2000,
+      "Referee": "Michael Oliver",
+      "Linesman1": "Andy Madley",
+      "Linesman2": "Peter Bankes",
+      "Team1Name": "Manchester United",
+      "Team1Manager": "Ole Gunnar Solskjær",
+      "Team1Coach": "Michael Carrick",
+      "Team1Players": [
+        {
+          "Name": "David de Gea",
+          "tNumber": 1,
+          "Role": "GK"
+        },
+        {
+          "Name": "Lee Grant",
+          "tNumber": 13,
+          "Role": "GK"
+        },
+        {
+          "Name": "Victor Lindelöf",
+          "tNumber": 2,
+          "Role": "DF"
+        },
+        {
+          "Name": "Eric Bailly",
+          "tNumber": 3,
+          "Role": "DF"
+        },
+        {
+          "Name": "Phil Jones",
+          "tNumber": 4,
+          "Role": "DF"
+        },
+        {
+          "Name": "Harry Maguire",
+          "tNumber": 5,
+          "Role": "DF"
+        },
+        {
+          "Name": "Marcos Rojo",
+          "tNumber": 16,
+          "Role": "DF"
+        },
+        {
+          "Name": "Paul Pogba",
+          "tNumber": 6,
+          "Role": "MF"
+        },
+        {
+          "Name": "Juan Mata",
+          "tNumber": 8,
+          "Role": "MF"
+        },
+        {
+          "Name": "Jesse Lingard",
+          "tNumber": 14,
+          "Role": "MF"
+        },
+        {
+          "Name": "Andreas Pereira",
+          "tNumber": 15,
+          "Role": "MF"
+        },
+        {
+          "Name": "Anthony Martial",
+          "tNumber": 9,
+          "Role": "FW"
+        },
+        {
+          "Name": "Marcus Rashford",
+          "tNumber": 10,
+          "Role": "FW"
+        },
+        {
+          "Name": "Mason Greenwood",
+          "tNumber": 16,
+          "Role": "FW"
+        },
+        {
+          "Name": "D'Mani Mellor",
+          "tNumber": 49,
+          "Role": "FW"
+        }
+      ],
+      "Team2Name": "Chelsea",
+      "Team2Manager": "Maurizio Sarri",
+      "Team2Coach": "Frank Lampard",
+      "Team2Players": [
+        {
+          "Name": "Kepa Arrizabalaga",
+          "tNumber": 1,
+          "Role": "GK"
+        },
+        {
+          "Name": "Willy Caballero",
+          "tNumber": 13,
+          "Role": "GK"
+        },
+        {
+          "Name": "Antonio Rüdiger",
+          "tNumber": 2,
+          "Role": "DF"
+        },
+        {
+          "Name": "Marcos Alonso",
+          "tNumber": 3,
+          "Role": "DF"
+        },
+        {
+          "Name": "Andreas Christensen",
+          "tNumber": 4,
+          "Role": "DF"
+        },
+        {
+          "Name": "Cesar Azpilicueta",
+          "tNumber": 28,
+          "Role": "DF"
+        },
+        {
+          "Name": "Emerson",
+          "tNumber": 33,
+          "Role": "DF"
+        },
+        {
+          "Name": "Jorginho",
+          "tNumber": 5,
+          "Role": "MF"
+        },
+        {
+          "Name": "N'Golo Kante",
+          "tNumber": 7,
+          "Role": "MF"
+        },
+        {
+          "Name": "Ross Barkleyd",
+          "tNumber": 8,
+          "Role": "MF"
+        },
+        {
+          "Name": "Ruben Loftus-Cheek",
+          "tNumber": 12,
+          "Role": "MF"
+        },
+        {
+          "Name": "Pedro",
+          "tNumber": 11,
+          "Role": "FW"
+        },
+        {
+          "Name": "Oliver Giroud",
+          "tNumber": 18,
+          "Role": "FW"
+        },
+        {
+          "Name": "Callum Hudson-Odoi",
+          "tNumber": 20,
+          "Role": "FW"
+        },
+        {
+          "Name": "William",
+          "tNumber": 10,
+          "Role": "FW"
+        }
+      ],
+      "id": 6
     }
   ],
   "Referee": [
@@ -1439,7 +1610,18 @@
       ]
     }
   ],
-  "Tickets": [],
+  "Tickets": [
+    {
+      "id": 1,
+      "firstName": "Neeraj",
+      "lastName": "Pradhan",
+      "email": "neeraj@gmail.com",
+      "CardNumber": 1234123412341234,
+      "CVV": 123,
+      "ExpDate": "2022-12",
+      "Match": "Arsenal vs Liecester City"
+    }
+  ],
   "Bets": [
     {
       "id": 1,
@@ -1453,19 +1635,6 @@
       "SelectedTeamName": "Chelsea",
       "FinalScore": "4-1",
       "BetAmount": 4000
-    },
-    {
-      "id": 2,
-      "firstName": "Neeraj",
-      "lastName": "Pradhan",
-      "email": "neeraj@gmail.com",
-      "CardNumber": 1234123412341234,
-      "CVV": 123,
-      "ExpDate": "2022-12",
-      "Match": "Chelsea vs Manchester City",
-      "SelectedTeamName": "Manchester City",
-      "FinalScore": "4-1",
-      "BetAmount": 2000
     }
   ]
 }
